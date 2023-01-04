@@ -2,7 +2,7 @@
 TODO: MAKE A DOC FOR THIS FILE
 """
 
-from temperature_error import _TemperatureError, _UndefinedStateError, _KeyTypeError
+from .temperature_error import _TemperatureError, _UndefinedStateError, _KeyTypeError
 from typing import Union
 from decimal import Decimal
 
@@ -39,8 +39,8 @@ class Temperature:
             then put the temperature and the symbol of the scale from which this temperature came.
 
         
-        CREATED BY: TWISTER_FROSTE
-        VERSION: 0.1.3(beta)
+        CREATED BY: Muhammed Alkohawaldeh
+        CLASS VERSION: 0.0.1(beta)
     
     """
 

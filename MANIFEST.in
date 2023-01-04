@@ -1,1 +1,2 @@
-global-include *.txt *.py
+global-include science/*.txt
+global-include science/*.py

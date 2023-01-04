@@ -11,8 +11,8 @@ from abc import ABCMeta, abstractmethod
 # from transitionMetal import TranMetal
 # from unknownChemicalProperties import UnknownChemicalProperties
 # from postTransitionMetal import PostTransitionMetal
-from atoms_base import AtomBase, Atoms_info
-from atomic_error import _AtomicError, _UndefinedSymbolError
+from .atoms_base import AtomBase, Atoms_info
+from .atomic_error import _AtomicError, _UndefinedSymbolError
 import time
 import sys
 
@@ -56,8 +56,8 @@ class Atom(AtomBase):
                     Available CASES:
                                 NULL
 
-        CREATED BY: TWISTER_FROSTE
-        VERSION: 0.1.1(beta)
+        CREATED BY: Muhammed Alkohawaldeh
+        CLASS VERSION: 0.0.1(beta)
     
     """
     

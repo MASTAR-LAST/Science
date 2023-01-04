@@ -1,6 +1,6 @@
 
 try:
-    from temperature import *
+    from .temperature import Temperature
 
 except ImportError:
     pass

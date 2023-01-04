@@ -17,4 +17,3 @@ class Lanthanide(Atom, AtomBase):
 
 fg = Lanthanide(name=None, symbol= None,group= None, atomicMass= None,atomicNumber= None, electronConfiguration=None, electrons=None, electronsPerShell=None, boilingPoint=None, neutrons=None, phaseAtSTP=None, protons=None, meltingPoint=None, isotopes=None)
 
-print(fg)

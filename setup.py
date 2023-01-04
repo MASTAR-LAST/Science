@@ -11,14 +11,14 @@ classifiers = [
 setup(
     name='science',
     version='0.1.0',
-    description='A scientific package full of functions that help to do experiments and test the properties of atoms under some conditions',
+    description='Use the properties of thermomechanics and set up simple chemical reactions',
     long_description=open('README.txt').read(),# الملف المذكور لم ينتهي بعد ...
     url='',
     author='Mohammed Al_kohawaldeh',
     author_email='belalalkohawaldeh@gmail.com',
     license='MIT',
     classifiers=classifiers,
-    keywords=['science', 'atom', 'atoms', 'scientific', ''],
+    keywords=['science', 'atom', 'atoms', 'scientific', 'thermomechanics', 'atomic', 'chemicals'],
     packages=find_packages(),
     requires=['decimal', '']# اكتب كل المكاتب الي استخدمتها في مكتبتك
 )

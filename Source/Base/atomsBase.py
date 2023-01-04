@@ -73,33 +73,47 @@ AtomsAlkalineEarthMetal = ['Beryllium(Be)', 'Magnesium(Mg)', 'Calcium(Ca)', 'Str
 class AtomBase(metaclass=ABCMeta):
 
     @abstractmethod
-    def atoms_info():...
+    def atoms_info() -> str: pass
+    @property
     @abstractmethod
-    def getSymbol():...
+    def getSymbol() -> str: pass
+    @property
     @abstractmethod
-    def getProtons():...
+    def getProtons() -> str: pass 
+    @property
     @abstractmethod
     def getNeutrons():...
+    @property
     @abstractmethod
     def getElectrons():...
+    @property
     @abstractmethod
     def getAtomicMass():...
+    @property
     @abstractmethod
     def getAtomicNumber():...
+    @property
     @abstractmethod
     def getGroup():...
+    @property
     @abstractmethod
     def getElecConfig():...
+    @property
     @abstractmethod
     def getElecPerShell():...
+    @property
     @abstractmethod
     def getPhaseAtSTP():...
+    @property
     @abstractmethod
     def getMeltingPoint():...
+    @property
     @abstractmethod
     def getBoilingPoint():...
+    @property
     @abstractmethod
     def getIsotopes():...
+    @property
     @abstractmethod
     def getFullName():...
 

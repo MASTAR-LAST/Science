@@ -63,7 +63,7 @@ class Atom(AtomBase):
     
     atomsNumber = 0
     
-    def __init__(self, name: str | None, symbol: str | None, protons: int | None, neutrons: int | None, electrons: int | None, atomicMass: str | None, atomicNumber: int | None, group: dict | None,
+    def __init__(self, name: str | None, symbol: str | None, protons: int | None, neutrons: int | None, electrons: int | None, atomicMass: str | None, atomicNumber: int | None, group: str | None,
      electronConfiguration: str | None, electronsPerShell: list | None, phaseAtSTP: str | None, meltingPoint: str | None, boilingPoint: str | None, isotopes: list | None):
 
         self.__name = name
@@ -84,7 +84,7 @@ class Atom(AtomBase):
 
 
     @classmethod
-    def atoms_info(cls, the_atom_name: str):
+    def atoms_info(cls, the_atom_name: str) -> str:
         """
             This function is give you a whole info that you want
             about any atom just write the name or write all_info
@@ -100,14 +100,17 @@ class Atom(AtomBase):
             return 
 
         elif the_atom_name == 'symbol':
-            temp = 1
-            for key in Atoms_info:
-                print(f'Atom_{temp} : {key}')
-                temp += 1
+                temp = 1
+                for key in Atoms_info:
+                    print(f'Atom_{temp} : {key}')
+                    temp += 1
+            
+
         elif the_atom_name in Atoms_info:
             return Atoms_info.get(the_atom_name)
 
-        raise _UndefinedSymbolError(the_atom_name)
+        else:
+            raise _UndefinedSymbolError(the_atom_name)
 
     def __str__(self):
         return f' Full Name: {self.__name},\n Symbol: {self.__symbol},\n Protons Number: {self.__protons},\n Neutrons Number: {self.__neutrons},\n Atomic Mass: {self.__atomicMass},\n Group: {self.__group},\n Electron Configuration: {self.__electronConfiguration},\n Electrons Per Shell: {self.__electronsPerShell},\n Phase at STP: {self.__phaseAtSTP},\n Melting Point: {self.__meltingPoint},\n Boiling Point: {self.__boilingPoint},\n Isotopes: {self.__isotopes}'
@@ -155,59 +158,59 @@ class Atom(AtomBase):
 # TEST FUNCTION
 # Atoms.e_orbit("H")
     @property
-    def getSymbol(self):
+    def getSymbol(self) -> str | None:
         return self.__symbol
 
     @property
-    def getProtons(self):
+    def getProtons(self) -> int | None:
         return self.__protons
 
     @property
-    def getNeutrons(self):
+    def getNeutrons(self) -> int | None:
         return self.__neutrons
 
     @property
-    def getElectrons(self):
+    def getElectrons(self) -> int | None:
         return self.__electrons
 
     @property
-    def getAtomicMass(self):
+    def getAtomicMass(self) -> str | None:
         return self.__atomicMass
 
     @property
-    def getAtomicNumber(self):
+    def getAtomicNumber(self) -> int | None:
         return self.__atomicNumber
 
     @property
-    def getGroup(self):
+    def getGroup(self) -> str | None:
         return self.__group
 
     @property
-    def getElecConfig(self):
+    def getElecConfig(self) -> str | None:
         return self.__electronConfiguration
 
     @property
-    def getElecPerShell(self):
+    def getElecPerShell(self) -> list | None:
         return self.__electronsPerShell
 
     @property
-    def getPhaseAtSTP(self):
+    def getPhaseAtSTP(self) -> str | None:
         return self.__phaseAtSTP
 
     @property
-    def getMeltingPoint(self):
+    def getMeltingPoint(self) -> str | None:
         return self.__meltingPoint
 
     @property
-    def getBoilingPoint(self):
+    def getBoilingPoint(self) -> str | None:
         return self.__boilingPoint
 
     @property
-    def getIsotopes(self):
+    def getIsotopes(self) -> list | None:
         return self.__isotopes
 
     @property
-    def getFullName(self):
+    def getFullName(self) -> str | None:
         return self.__name
 
 ########################################################################################################################################
@@ -221,7 +224,7 @@ class Atom(AtomBase):
 
 ###################################################################################################################################################
 
-Hydrogen = Atom("Hydrogen", "H", 1, 0, 1, '1.00784u', 1, 'Group 1 alkali metals', '1S^1', [1], 'Gas', '13.99 K (-259.16 C, -434.49 F)', '(H2) 20.271 K (-252.879 C, -423.182 F)', ['1H', '2H', '3H'])
+Hydrogen = Atom("Hydrogen", "H", 1, 0, 1, '1.00784u', 1, 'Group 1 (alkali metals)', '1S^1', [1], 'Gas', '13.99 K (-259.16 C, -434.49 F)', '(H2) 20.271 K (-252.879 C, -423.182 F)', ['1H', '2H', '3H'])
 Helium = Atom("Helium", "He", 2, 2, 2, "4.002602 u", 2, 'Group 18 (noble gases)', "1s^2", [2], 'Gas', "0.95 K (-272.20 °C, -457.96 °F) (at 2.5 MPa)", '	4.222 K (-268.928 °C, -452.070 °F)', ['2He', '3He', '4He'])
 # Lithium = Atom()
 # Beryllium = Atom()
@@ -253,6 +256,6 @@ Helium = Atom("Helium", "He", 2, 2, 2, "4.002602 u", 2, 'Group 18 (noble gases)'
 
 # print(Atom.atoms_info('all_info'))
 # print(Atom.atoms_info(56))
-# print(Atom.atoms_info('symbol'))
+print(Atom.atoms_info('symbol'))
 
 # print(Atom.atoms_info("all_info"))

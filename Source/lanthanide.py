@@ -1,10 +1,11 @@
 from __init__ import Atom
+from Base.atomsBase import AtomBase
 from Errors.AtomicError import _AtomicError
 from sys import *
 from types import *
 
 
-class Lanthanide(Atom):
+class Lanthanide(Atom, AtomBase):
 
      # TODO:     Make Functions&Methods for this class, make sure it has a get atoms method.
      # TODO:     Don't forget to make a list that have all atoms that in this class. 
@@ -16,4 +17,4 @@ class Lanthanide(Atom):
 
 fg = Lanthanide(name=None, symbol= None,group= None, atomicMass= None,atomicNumber= None, electronConfiguration=None, electrons=None, electronsPerShell=None, boilingPoint=None, neutrons=None, phaseAtSTP=None, protons=None, meltingPoint=None, isotopes=None)
 
-print(fg.__str__())
+print(fg)

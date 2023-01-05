@@ -1,11 +1,10 @@
-from atom import Atom
-from atoms_base import AtomBase
-from atomic_error import _AtomicError
+from .atom import Atom
+from .atomic_error import _AtomicError
 from sys import *
 from types import *
 
 
-class Lanthanide(Atom, AtomBase):
+class Lanthanide(Atom):
 
      # TODO:     Make Functions&Methods for this class, make sure it has a get atoms method.
      # TODO:     Don't forget to make a list that have all atoms that in this class. 

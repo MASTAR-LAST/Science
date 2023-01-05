@@ -1,6 +1,6 @@
 
-from __init__ import Atom
-from atomic_error import _AtomicError
+from .atom import Atom
+from .atomic_error import _AtomicError
 from sys import *
 from types import *
 AtomsTransMetal = ["Scandium(Sc)", "Titanium(Ti)", "Vanadium(V)", "Chromium(Cr)", "Manganese(Mn)",

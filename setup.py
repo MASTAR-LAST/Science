@@ -8,11 +8,12 @@ classifiers = [
     'Programming Language :: Python :: 3.10'
 ]
 
+exec(open('version.py').read())
 setup(
     name='science',
-    version='0.1.0',
+    version=__version__,
     description='Use the properties of thermomechanics and set up simple chemical reactions',
-    long_description=open('README.txt').read(),# الملف المذكور لم ينتهي بعد ...
+    long_description=open('README.md').read(),# الملف المذكور لم ينتهي بعد ...
     url='',
     author='Mohammed Al_kohawaldeh',
     author_email='belalalkohawaldeh@gmail.com',

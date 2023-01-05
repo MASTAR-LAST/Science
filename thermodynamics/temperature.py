@@ -6,7 +6,7 @@ from .temperature_error import _TemperatureError, _UndefinedStateError, _KeyType
 from typing import Union
 from decimal import Decimal
 
-def fahrenMethod(target, status: str | None) -> Decimal:
+def fahrenMethod(target, status: Union[str, None]) -> Decimal:
     target = Decimal(target)
     if status == 'to fehren':
         result = target * Decimal('1.8') + Decimal('32')

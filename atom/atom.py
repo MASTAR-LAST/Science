@@ -1,18 +1,9 @@
 #                                                                               Made by TWISTER_FROSTE
 #   Date: 24/9/2022
-from abc import ABCMeta, abstractmethod
-# from lanthanide import Lanthanide
-# from alkaliMetal import AlkaliMetal
-# from metalloid import Metalloid
-# from nobleGas import NobleGas
-# from alkalineEarthMetal import AlkalineEarthMetal
-# from actinide import Actinide
-# from reactiveNonmetal import ReactiveNonmetal
-# from transitionMetal import TranMetal
-# from unknownChemicalProperties import UnknownChemicalProperties
-# from postTransitionMetal import PostTransitionMetal
+
 from .atoms_base import AtomBase, Atoms_info
 from .atomic_error import _AtomicError, _UndefinedSymbolError
+from typing import Union
 import time
 import sys
 
@@ -63,8 +54,8 @@ class Atom(AtomBase):
     
     atomsNumber = 0
     
-    def __init__(self, name: str | None, symbol: str | None, protons: int | None, neutrons: int | None, electrons: int | None, atomicMass: str | None, atomicNumber: int | None, group: str | None,
-     electronConfiguration: str | None, electronsPerShell: list | None, phaseAtSTP: str | None, meltingPoint: str | None, boilingPoint: str | None, isotopes: list | None):
+    def __init__(self, name: Union[str, None], symbol: Union[str, None], protons: Union[int, None], neutrons: Union[int, None], electrons: Union[int, None], atomicMass: Union[str, None], atomicNumber: Union[int, None], group: Union[str, None],
+     electronConfiguration: Union[str, None], electronsPerShell: Union[list, None], phaseAtSTP: Union[str, None], meltingPoint: Union[str, None], boilingPoint: Union[str, None], isotopes: Union[list, None]):
 
         self.__name = name
         self.__group = group
@@ -158,59 +149,59 @@ class Atom(AtomBase):
 # TEST FUNCTION
 # Atoms.e_orbit("H")
     @property
-    def getSymbol(self) -> str | None:
+    def getSymbol(self) -> Union[str, None]:
         return self.__symbol
 
     @property
-    def getProtons(self) -> int | None:
+    def getProtons(self) -> Union[int, None]:
         return self.__protons
 
     @property
-    def getNeutrons(self) -> int | None:
+    def getNeutrons(self) -> Union[int, None]:
         return self.__neutrons
 
     @property
-    def getElectrons(self) -> int | None:
+    def getElectrons(self) -> Union[int, None]:
         return self.__electrons
 
     @property
-    def getAtomicMass(self) -> str | None:
+    def getAtomicMass(self) -> Union[str, None]:
         return self.__atomicMass
 
     @property
-    def getAtomicNumber(self) -> int | None:
+    def getAtomicNumber(self) -> Union[int, None]:
         return self.__atomicNumber
 
     @property
-    def getGroup(self) -> str | None:
+    def getGroup(self) -> Union[str, None]:
         return self.__group
 
     @property
-    def getElecConfig(self) -> str | None:
+    def getElecConfig(self) -> Union[str, None]:
         return self.__electronConfiguration
 
     @property
-    def getElecPerShell(self) -> list | None:
+    def getElecPerShell(self) -> Union[list, None]:
         return self.__electronsPerShell
 
     @property
-    def getPhaseAtSTP(self) -> str | None:
+    def getPhaseAtSTP(self) -> Union[str, None]:
         return self.__phaseAtSTP
 
     @property
-    def getMeltingPoint(self) -> str | None:
+    def getMeltingPoint(self) -> Union[str, None]:
         return self.__meltingPoint
 
     @property
-    def getBoilingPoint(self) -> str | None:
+    def getBoilingPoint(self) -> Union[str, None]:
         return self.__boilingPoint
 
     @property
-    def getIsotopes(self) -> list | None:
+    def getIsotopes(self) -> Union[list, None]:
         return self.__isotopes
 
     @property
-    def getFullName(self) -> str | None:
+    def getFullName(self) -> Union[str, None]:
         return self.__name
 
 ########################################################################################################################################

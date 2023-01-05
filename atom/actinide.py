@@ -1,5 +1,5 @@
-from __init__ import Atom
-from atomic_error import _AtomicError
+from .atom import Atom
+from .atomic_error import _AtomicError
 from sys import *
 from types import *
 

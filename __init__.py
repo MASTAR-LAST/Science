@@ -31,6 +31,7 @@ import numpy
 try:
     from .atom import *
     from .thermodynamics import *
+    from .version import __version__
 
 except ImportError:
     pass

@@ -1,7 +1,5 @@
-from .temperature import Temperature as tm
-from .temperature_error import (_KeyTypeError,
-                                              _TemperatureError,
-                                               _UndefinedStateError)
+from temperature import Temperature as tm
+from temperature_error import (_KeyTypeError, _TemperatureError, _UndefinedStateError)
 import unittest
 
 #     Celisius Tests

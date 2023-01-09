@@ -1,8 +1,15 @@
 
-from .atom import Atom
-from .atomic_error import _AtomicError
-from sys import *
-from types import *
+try:
+   from .abc23 import Atom
+   from .atomic_error import _AtomicError
+   from sys import *
+   from types import *
+except ImportError:
+   from abc23 import Atom
+   from atomic_error import _AtomicError
+   from sys import *
+   from types import *
+   
 AtomsTransMetal = ["Scandium(Sc)", "Titanium(Ti)", "Vanadium(V)", "Chromium(Cr)", "Manganese(Mn)",
                    "Iron(Fe)", "Cobalt(Co)", "Nickel(Ni)", "Copper(Cu)", "Yttrium(Y)", "Zirconium(Zr)",
                    "Niobium(Nb)", "Molybdenum(Mo)", "Technetium(Tc)", "Ruthenium(Ru)", "Rhodium(Rh)",

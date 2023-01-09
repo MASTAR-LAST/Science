@@ -1,4 +1,4 @@
-from .atom import Atom
+from .abc23 import Atom
 from .atomic_error import _AtomicError
 from sys import *
 from types import *

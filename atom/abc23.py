@@ -1,12 +1,17 @@
 #                                                                               Made by TWISTER_FROSTE
 #   Date: 24/9/2022
-
-from .atoms_base import AtomBase, Atoms_info
-from .atomic_error import _AtomicError, _UndefinedSymbolError
-from typing import Union
-import time
-import sys
-
+try:
+    from .atoms_base import AtomBase, Atoms_info
+    from .atomic_error import _AtomicError, _UndefinedSymbolError
+    from typing import Union
+    import time
+    import sys
+except ImportError:
+    from atoms_base import AtomBase, Atoms_info
+    from atomic_error import _AtomicError, _UndefinedSymbolError
+    from typing import Union
+    import time
+    import sys
 """
     TODO: Make your own error with 'Exception' like a class 
     go to this link https://www.programiz.com/python-programming/user-defined-exception
@@ -26,7 +31,6 @@ import sys
 class Atom(AtomBase):
     """
         FUNCTIONS:
-                All functions in this class just need to call and don't take any argument
 
                     Available FUNCTIONS:
                                     FUNC 1: "getSymbol" this function's just return a symbol of the element that is in this case is object
@@ -39,7 +43,7 @@ class Atom(AtomBase):
                                     FUNC 8: "getElecConfig" this function's just return a symbol of the element that is in this case is object
                                     FUNC 9: "getElecPerShell" this function's just return a symbol of the element that is in this case is object
                                     FUNC 10: "getPhaseAtSTP" this function's just return a symbol of the element that is in this case is object
-                                    FUNC 11: "getMeltingPoint" this function's just return a symbol of the element that is in this case is object                                    FUNC 1: "getSymbol" this function's just return a symbol of the element that is in this case is object
+                                    FUNC 11: "getMeltingPoint" this function's just return a symbol of the element that is in this case is object
                                     FUNC 12: "getBoilingPoint" this function's just return a symbol of the element that is in this case is object
                                     FUNC 13: "getIsotopes" this function's just return a symbol of the element that is in this case is object
                                     FUNC 14: "getFullName" this function's just return a symbol of the element that is in this case is object
@@ -106,48 +110,7 @@ class Atom(AtomBase):
     def __str__(self):
         return f' Full Name: {self.__name},\n Symbol: {self.__symbol},\n Protons Number: {self.__protons},\n Neutrons Number: {self.__neutrons},\n Atomic Mass: {self.__atomicMass},\n Group: {self.__group},\n Electron Configuration: {self.__electronConfiguration},\n Electrons Per Shell: {self.__electronsPerShell},\n Phase at STP: {self.__phaseAtSTP},\n Melting Point: {self.__meltingPoint},\n Boiling Point: {self.__boilingPoint},\n Isotopes: {self.__isotopes}'
         
-    # #       DO NOT F**KING FORGET TO DEBUGGING THIS F**KING FUNCTION
-    # @classmethod 
-    # def e_orbit(cls, element):
-    #     cls.element = element
-
-    #     e_dist = []
-    #     Atomic_number_tmp = Atomic_Number[element]
-    #     while Atomic_number_tmp != 0:
-
-    #         if Atomic_number_tmp == 1:
-    #             e_dist.append(1)
-    #             break
-
-    #         else:
-    #             e_dist.append(2)
-    #             Atomic_number_tmp -= 2
-
-    #             if Atomic_number_tmp <= 0:
-    #                 break
-
-    #             else:
-    #                 if (Atomic_number_tmp - 8) == 0:
-    #                      e_dist.append(8)
-    #                      break
-
-    #                 elif (Atomic_number_tmp - 8) > 0:
-    #                     e_dist.append(8)
-    #                     Atomic_number_tmp -= 8
-
-    #                     if Atomic_number_tmp <= 0:
-    #                         break
-
-    #                     elif Atomic_number_tmp > 0 and Atomic_number_tmp <= 8:
-    #                         e_dist.append(Atomic_number_tmp)
-
-    #                 elif (Atomic_number_tmp - 8) < 0:
-    #                     break
-    #         break
-    #     print(e_dist)
-
-# TEST FUNCTION
-# Atoms.e_orbit("H")
+    
     @property
     def getSymbol(self) -> Union[str, None]:
         return self.__symbol

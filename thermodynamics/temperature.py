@@ -1,10 +1,15 @@
 """
 TODO: MAKE A DOC FOR THIS FILE
 """
-
-from .temperature_error import _TemperatureError, _UndefinedStateError, _KeyTypeError
-from typing import Union
-from decimal import Decimal
+__all__ = ['Temperature']
+try:
+    from .temperature_error import _TemperatureError, _UndefinedStateError, _KeyTypeError
+    from typing import Union
+    from decimal import Decimal
+except ImportError:
+    from temperature_error import _TemperatureError, _UndefinedStateError, _KeyTypeError
+    from typing import Union
+    from decimal import Decimal
 
 def fahrenMethod(target, status: Union[str, None]) -> Decimal:
     target = Decimal(target)

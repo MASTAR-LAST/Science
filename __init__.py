@@ -24,14 +24,64 @@ Code for converting a thermometer from Celsius to Kelvin:
     >>> result = sc.Temperature.Kelvin(13,'c')
     >>> print(result)
 
-For more details, please refer `https://github.com/MASTAR-LAST/Science` and see README.md file.
+For more details, please refer `https://github.com/MASTAR-LAST/Science` and see `README.md` file.
+
+Atomic Class
+------------
+
+`Atom class:`
+                FUNCTIONS:
+
+                    `Available FUNCTIONS`:
+                                    `FUNC 1`: "getSymbol" this function's just return a symbol of the element that is in this case is object
+                                    `FUNC 2`: "getProtons" this function's just return a symbol of the element that is in this case is object
+                                    `FUNC 3`: "getNeutrons" this function's just return a symbol of the element that is in this case is object
+                                    `FUNC 4`: "getElectrons" this function's just return a symbol of the element that is in this case is object
+                                    `FUNC 5`: "getAtomicMass" this function's just return a symbol of the element that is in this case is object
+                                    `FUNC 6`: "getAtomicNumber" this function's just return a symbol of the element that is in this case is object
+                                    `FUNC 7`: "getGroup" this function's just return a symbol of the element that is in this case is object
+                                    `FUNC 8`: "getElecConfig" this function's just return a symbol of the element that is in this case is object
+                                    `FUNC 9`: "getElecPerShell" this function's just return a symbol of the element that is in this case is object
+                                    `FUNC 10`: "getPhaseAtSTP" this function's just return a symbol of the element that is in this case is object
+                                    `FUNC 11`: "getMeltingPoint" this function's just return a symbol of the element that is in this case is object
+                                    `FUNC 12`: "getBoilingPoint" this function's just return a symbol of the element that is in this case is object
+                                    `FUNC 13`: "getIsotopes" this function's just return a symbol of the element that is in this case is object
+                                    `FUNC 14`: "getFullName" this function's just return a symbol of the element that is in this case is object
+
+                    `Available CASES`:
+                                NULL
+
+Thermodynamic Class
+-------------------
+
+`Temperature class:`
+                   FUNCTIONS:
+                            All functions take two arguments (Temperature, Key)
+
+                        `Available FUNCTIONS`:
+                                    `Func 1`:  Kelvin(here but the number of temperature, here but the scale key).
+                                    `Func 2`:  Fahrenheit(here but the number of temperature, here but the scale key).
+                                    `Func 3`:  Celsius(here but the number of temperature, here but the scale key).
+
+                        `Available CASES`:
+                                    `Case 1`:  Use the scale key 'K or k' if the temperature number from Kelvin. 
+                                    `Case 2`:  Use the scale key 'F or f' if the temperature number from Fahrenheit.
+                                    `Case 3`:  Use the scale key 'C or c' if the temperature number from Celsius.
+
+                    `USES`:
+                        If you want to switch between temperature gauges,
+                        Use the name of the scale you want to convert to,
+                        then put the temperature and the symbol of the scale from which this temperature came.
+
 
 """
-import numpy
+
 try:
     from .atom import *
     from .thermodynamics import *
     from .version import __version__
 
 except ImportError:
-    pass
+    from atom import *
+    from thermodynamics import *
+    from version import __version__

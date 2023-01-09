@@ -77,11 +77,11 @@ Thermodynamic Class
 """
 
 try:
-    from .atom import *
-    from .thermodynamics import *
+    from .core.atom import *
+    from .core.thermodynamics import *
     from .version import __version__
 
 except ImportError:
-    from atom import *
-    from thermodynamics import *
+    from core.atom import *
+    from core.thermodynamics import *
     from version import __version__

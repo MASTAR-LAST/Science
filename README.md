@@ -18,7 +18,7 @@
 
 <br>
 
-<a href="paypal.me/MASTALAST" alt="Paypal">
+<a href="https://www.paypal.com/paypalme/MASTALAST" alt="Paypal">
   <img src="https://img.shields.io/liberapay/receives/TheAlgorithms.svg?logo=Paypal" target="blank" />
 </a>
 

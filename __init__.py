@@ -26,7 +26,7 @@ Code for converting a thermometer from Celsius to Kelvin:
 
 For more details, please refer `https://github.com/MASTAR-LAST/Science` and see `README.md` file.
 
-Atomic Class
+Atomic Classes
 ------------
 
 `Atom class:`
@@ -51,7 +51,7 @@ Atomic Class
                     `Available CASES`:
                                 NULL
 
-Thermodynamic Class
+Thermodynamic Classes
 -------------------
 
 `Temperature class:`

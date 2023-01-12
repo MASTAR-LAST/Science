@@ -79,7 +79,7 @@ class Atom(AtomBase):
 
 
     @classmethod
-    def atoms_info(cls, the_atom_name: str) -> str:
+    def atoms_info(cls, the_atom_name: str) -> Union[str, None]:
         """
             This function is give you a whole info that you want
             about any atom just write the name or write all_info

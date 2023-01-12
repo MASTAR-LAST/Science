@@ -11,7 +11,7 @@ classifiers = [
 exec(open('version.py').read())
 setup(
     name='science',
-    version=__version__,
+    version='0.1.0',
     description='Use the properties of thermomechanics and set up simple chemical reactions',
     long_description=open('README.md').read(),# الملف المذكور لم ينتهي بعد ...
     url='',

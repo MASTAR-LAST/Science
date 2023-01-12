@@ -80,7 +80,7 @@ Please make sure to update tests as appropriate.
     # Importing the module as sc
     import science as sc
 
-    # Call the Ahmed function from the Temperature class
+    # Call the Kelvin function from the Temperature class
     temp = sc.Temperature.Kelvin(23, 'c')
 
     # Printing the result

@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-
+from version import __version__
 classifiers = [
     'Development Status :: 5 - Production/non-stable',
     'Intended Audience :: Education',
@@ -21,5 +21,5 @@ setup(
     classifiers=classifiers,
     keywords=['science', 'atom', 'atoms', 'scientific', 'thermomechanics', 'atomic', 'chemicals'],
     packages=find_packages(),
-    requires=['decimal', '']# اكتب كل المكاتب الي استخدمتها في مكتبتك
+    requires=['decimal', 'numpy', 'scipy']# اكتب كل المكاتب الي استخدمتها في مكتبتك
 )

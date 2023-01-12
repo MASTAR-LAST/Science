@@ -8,28 +8,29 @@
 
 
 <br>
+
 <p align="center">
-<a href="https://www.linkedin.com/in/muhammed-al-kohawaldeh-2a1295245/" alt="LinkedIn">
+  <a href="https://www.linkedin.com/in/muhammed-al-kohawaldeh-2a1295245/" alt="LinkedIn">
   <img src="https://img.shields.io/badge/LinkedIn-Mohammed%20Alkohawaldeh-purple?logo=linkedin&logoColor=blue&color=blue" />
-</a>
-<a href="https://discord.com/channels/1059139195127480420/1059139196075384956" alt="Chat on Discord">
+  </a>
+  <a href="https://discord.com/channels/1059139195127480420/1059139196075384956" alt="Chat on Discord">
    <img src="https://img.shields.io/discord/808045925556682782.svg?logo=discord&colorB=00d37d" target="blank" />
-</a>
+  </a>
 
-![GitHub](https://img.shields.io/github/license/MASTAR-LAST/Science?color=grean) 
-
-<br>
-
-<a href="https://www.paypal.com/paypalme/MASTALAST" alt="Paypal">
+  <a href="https://www.paypal.com/paypalme/MASTALAST" alt="Paypal">
   <img src="https://img.shields.io/liberapay/receives/TheAlgorithms.svg?logo=Paypal" target="blank" />
-</a>
+  </a>
 
-<a href="https://twitter.com/TWISTER92257313" alt="Twitter">
+  <a href="https://twitter.com/TWISTER92257313" alt="Twitter">
   <img src="https://img.shields.io/twitter/follow/The_Algorithms?label=Follow us&style=social" />
-</a>
-</p>
+  </a>
+
+
+  ![GitHub](https://img.shields.io/github/license/MASTAR-LAST/Science?color=grean) 
 
 <br>
+
+</p>
 
 Installation
 ============

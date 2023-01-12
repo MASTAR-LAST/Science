@@ -26,7 +26,7 @@ Code for converting a thermometer from Celsius to Kelvin:
 
 For more details, please refer `https://github.com/MASTAR-LAST/Science` and see `README.md` file.
 
-Atomic Class
+Atomic Classes
 ------------
 
 `Atom class:`
@@ -51,7 +51,7 @@ Atomic Class
                     `Available CASES`:
                                 NULL
 
-Thermodynamic Class
+Thermodynamic Classes
 -------------------
 
 `Temperature class:`
@@ -77,11 +77,11 @@ Thermodynamic Class
 """
 
 try:
-    from .atom import *
-    from .thermodynamics import *
+    from .core.atom import *
+    from .core.thermodynamics import *
     from .version import __version__
 
 except ImportError:
-    from atom import *
-    from thermodynamics import *
+    from core.atom import *
+    from core.thermodynamics import *
     from version import __version__

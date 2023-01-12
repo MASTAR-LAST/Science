@@ -10,7 +10,7 @@ except ImportError:
    from sys import *
    from types import *
    
-AtomsTransMetal = ["Scandium(Sc)", "Titanium(Ti)", "Vanadium(V)", "Chromium(Cr)", "Manganese(Mn)",
+AtomsTransMetal: list[str] = ["Scandium(Sc)", "Titanium(Ti)", "Vanadium(V)", "Chromium(Cr)", "Manganese(Mn)",
                    "Iron(Fe)", "Cobalt(Co)", "Nickel(Ni)", "Copper(Cu)", "Yttrium(Y)", "Zirconium(Zr)",
                    "Niobium(Nb)", "Molybdenum(Mo)", "Technetium(Tc)", "Ruthenium(Ru)", "Rhodium(Rh)",
                    "Palladium(Pd)", "Silver(Ag)", "Hafnium(Hf)", "Tantalum(Ta)", "Tungsten(W)", "Rhenium(Re)", 

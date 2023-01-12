@@ -31,7 +31,7 @@ except ImportError:
 class Atom(AtomBase):
     """
         FUNCTIONS:
-
+        ---------
                     Available FUNCTIONS:
                                     FUNC 1: "getSymbol" this function's just return a symbol of the element that is in this case is object
                                     FUNC 2: "getProtons" this function's just return a symbol of the element that is in this case is object
@@ -51,12 +51,12 @@ class Atom(AtomBase):
                     Available CASES:
                                 NULL
 
-        CREATED BY: Muhammed Alkohawaldeh
-        CLASS VERSION: 0.0.1(beta)
+        CREATED BY: `Muhammed Alkohawaldeh`
+        CLASS VERSION: `0.0.1(beta)`
     
     """
     
-    atomsNumber = 0
+    atomsNumber: int = 0
     
     def __init__(self, name: Union[str, None], symbol: Union[str, None], protons: Union[int, None], neutrons: Union[int, None], electrons: Union[int, None], atomicMass: Union[str, None], atomicNumber: Union[int, None], group: Union[str, None],
      electronConfiguration: Union[str, None], electronsPerShell: Union[list, None], phaseAtSTP: Union[str, None], meltingPoint: Union[str, None], boilingPoint: Union[str, None], isotopes: Union[list, None]):
@@ -92,14 +92,13 @@ class Atom(AtomBase):
             for key, value in Atoms_info.items():
                 print(key, value)
             
-            return 
+            return ...
 
         elif the_atom_name == 'symbol':
                 temp = 1
                 for key in Atoms_info:
                     print(f'Atom_{temp} : {key}')
-                    temp += 1
-            
+                    temp += 1            
 
         elif the_atom_name in Atoms_info:
             return Atoms_info.get(the_atom_name)

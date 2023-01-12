@@ -3,7 +3,7 @@ from .atomic_error import _AtomicError
 from sys import *
 from types import *
 
-AtomsAlkalineEarthMetal = ['Beryllium(Be)', 'Magnesium(Mg)', 'Calcium(Ca)', 'Strontium(Sr)', 'Barium(Ba)', 'Radium(Ra)']
+AtomsAlkalineEarthMetal: list[str] = ['Beryllium(Be)', 'Magnesium(Mg)', 'Calcium(Ca)', 'Strontium(Sr)', 'Barium(Ba)', 'Radium(Ra)']
 
 class AlkalineEarthMetal(Atom):
 

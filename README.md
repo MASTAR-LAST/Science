@@ -8,26 +8,38 @@
 
 
 <br>
+
 <p align="center">
-<a href="https://www.linkedin.com/in/muhammed-al-kohawaldeh-2a1295245/" alt="LinkedIn">
+  <a href="https://www.linkedin.com/in/muhammed-al-kohawaldeh-2a1295245/" alt="LinkedIn">
   <img src="https://img.shields.io/badge/LinkedIn-Mohammed%20Alkohawaldeh-purple?logo=linkedin&logoColor=blue&color=blue" />
-</a>
-<a href="https://discord.com/channels/1059139195127480420/1059139196075384956" alt="Chat on Discord">
+  </a>
+  <a href="https://discord.com/channels/1059139195127480420/1059139196075384956" alt="Chat on Discord">
    <img src="https://img.shields.io/discord/808045925556682782.svg?logo=discord&colorB=00d37d" target="blank" />
-</a>
+  </a>
+
+  <a href="https://www.paypal.com/paypalme/MASTALAST" alt="Paypal">
+  <img src="https://img.shields.io/liberapay/receives/TheAlgorithms.svg?logo=Paypal" target="blank" />
+  </a>
+
+  <a href="https://twitter.com/TWISTER92257313" alt="Twitter">
+  <img src="https://img.shields.io/twitter/follow/The_Algorithms?label=Follow us&style=social" />
+  </a>
+
+
+  ![GitHub](https://img.shields.io/github/license/MASTAR-LAST/Science?color=grean) 
 
 <br>
 
-<a href="https://www.paypal.com/paypalme/MASTALAST" alt="Paypal">
-  <img src="https://img.shields.io/liberapay/receives/TheAlgorithms.svg?logo=Paypal" target="blank" />
-</a>
-
-<a href="https://twitter.com/TWISTER92257313" alt="Twitter">
-  <img src="https://img.shields.io/twitter/follow/The_Algorithms?label=Follow us&style=social" />
-</a>
 </p>
 
-<br>
+Installation
+============
+## Use the package manager pip to install foobar.
+
+```bash
+  pip install science
+```
+
 
 <h1> Who's us </h1>
   I'm a solo python programmer, living in jorden, owner of science package.
@@ -40,7 +52,14 @@ related to conversion between temperatures or atomic activity
 in containing almost all the information of atoms,
 which makes it powerful and able to create simple simulations of atomic activities.
 
-NOTE: this package is created by one persone, so don't be rude
+> **NOTE:** this package is created by one persone, so don't be rude
+
+## Contributing
+
+**Pull requests are welcome**. For major changes, please open an *issue* first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
 
 <h2> Sources </h2>
         <ul>
@@ -52,4 +71,21 @@ NOTE: this package is created by one persone, so don't be rude
             </li>
         </ul>
 
+# Usage
 
+## Simpel usage
+## Convert between temperature scales
+```python 
+    #                            From Celsius to Kelvin
+    # Importing the module as sc
+    import science as sc
+
+    # Call the Kelvin function from the Temperature class
+    temp = sc.Temperature.Kelvin(23, 'c')
+
+    # Printing the result
+    print(temp)
+```
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)

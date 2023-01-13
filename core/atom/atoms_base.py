@@ -117,7 +117,3 @@ class AtomBase(metaclass=ABCMeta):
     @property
     @abstractmethod
     def getFullName()-> Union[str, None]:...
-
-    
-
-

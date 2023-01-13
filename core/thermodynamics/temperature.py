@@ -11,6 +11,12 @@ except ImportError:
     from typing import Union
     from decimal import Decimal
 
+global kelvinConstant, rankinDivConstant, rankinRedivConstant, rankinStatConstant
+kelvinConstant: Decimal = Decimal('273.15')
+rankinStatConstant: Decimal = Decimal('491.67')
+rankinRedivConstant: Decimal = Decimal('0.55555555555')
+rankinDivConstant: Decimal = Decimal('1.8')
+
 def fahrenMethod(target, status: Union[str, None]) -> Decimal:
     target = Decimal(target)
     if status == 'to fehren':
@@ -49,8 +55,7 @@ class Temperature:
     
     """
 
-    global kelvinConstant
-    kelvinConstant = Decimal('273.15')
+
 
    #TODO:   عدل على الدالة __init__ لكي تسمح بصنع مقاييس حرارة مختلفة بالاسم الذي تريد بالطريقة التي تريد 
     def __init__(self, Temperature, Key):
@@ -71,15 +76,24 @@ class Temperature:
         if type(Key) != str:
             raise _KeyTypeError(Key)
 
+        if type(Temperature) not in [int, float]:
+            raise TypeError('The Data type must be an integer or float')
+
         Temperature = float(Temperature)
         Temperature = Decimal(f'{Temperature}')
+
         if Key in ['K', 'k', 'Kelvin']:
             return float(Temperature)
+
         elif Key in ['C', 'c', 'Celsius']:
             return float(Temperature + kelvinConstant)
+
         elif Key in ['F', 'f', 'Fahrenheit']:
             Temperature = fahrenMethod(target = Temperature, status = 'to kelvin&celsius')
             Temperature += kelvinConstant 
+            return float(Temperature)
+        
+        elif Key.lower() in ['r', 'rankin']:
             return float(Temperature)
 
         raise _TemperatureError(Key)
@@ -94,14 +108,25 @@ class Temperature:
         if type(Key) != str:
             raise _KeyTypeError(Key)
 
+        if type(Temperature) not in [int, float]:
+            raise TypeError('The Data type must be an integer or float')
+
         Temperature = float(Temperature)
         Temperature = Decimal(f'{Temperature}')
+
         if Key in ['K', 'k', 'Kelvin']:
             return float(Temperature - kelvinConstant)
+
         elif Key in ['C', 'c', 'Celsius']:
             return float(Temperature)
+
         elif Key in ['F', 'f', 'Fahrenheit']:
             return float(fahrenMethod(target = Temperature, status = 'to kelvin&celsius'))
+
+        elif Key.lower() in ['r', 'rankin']:
+            Temperature -= rankinStatConstant
+            Temperature *= rankinRedivConstant
+            return float(Temperature)
        
         raise _TemperatureError(Key)
 
@@ -114,16 +139,61 @@ class Temperature:
         """
         if type(Key) != str:
             raise _KeyTypeError(Key)
+
+        if type(Temperature) not in [int, float]:
+            raise TypeError('The Data type must be an integer or float')
             
         Temperature = float(Temperature)
         Temperature = Decimal(f'{Temperature}')
-        if Key in ['K', 'k', 'Kelvin']:
+
+        if Key.lower() in ['k', 'kelvin']:
             Temperature -= kelvinConstant # transformed from Kelvin to Celsius
             Temperature = fahrenMethod(target = Temperature, status = 'to fehren') # transformed from Celsius to Fahrenheit
             return float(Temperature)
-        elif Key in ['C', 'c', 'Celsius']:
+
+        elif Key.lower() in ['c', 'celsius']:
             return float(fahrenMethod(target = Temperature, status = 'to fehren')) # transformed from Celsius to Fahrenheit
-        elif Key in ['F', 'f', 'Fahrenheit']:
+
+        elif Key.lower() in ['f', 'fahrenheit']:
+            return float(Temperature)
+
+        elif Key.lower() in ['r', 'rankin']:
             return float(Temperature)
        
         raise _TemperatureError(Key)
+
+
+    @staticmethod
+    def Rankin(Temperature: Union[int, float], Key: str) -> float:
+        """
+            This function converts the entered temperature into Fahrenheit
+        
+        """
+        if type(Key) != str:
+            raise _KeyTypeError(Key)
+
+        if type(Temperature) not in [int, float]:
+            raise TypeError('The Data type must be an integer or float')
+            
+        Temperature = float(Temperature)
+        Temperature = Decimal(f'{Temperature}')
+
+        if Key.lower() in ['k', 'kelvin']:
+            Temperature *= rankinDivConstant
+            return float(Temperature)
+
+        elif Key.lower() in ['c', 'celsius']:
+            Temperature += kelvinConstant
+            Temperature *= rankinDivConstant
+            return float(Temperature)
+
+        elif Key.lower() in ['f', 'fahrenheit']:
+            Temperature = fahrenMethod(target = Temperature, status = 'to kelvin&celsius')
+            Temperature *= rankinDivConstant
+            return float(Temperature)
+
+        elif Key.lower() in ['r', 'rankin']:
+            return float(Temperature)
+       
+        raise _TemperatureError(Key)
+

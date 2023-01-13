@@ -1,9 +1,10 @@
 from setuptools import setup, find_packages
 from version import __version__
 classifiers = [
-    'Development Status :: 5 - Production/non-stable',
-    'Intended Audience :: Education',
-    'Operating System :: Microsoft :: Windows :: Windows 10 :: Linux :: Mac OS' ,
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Science/Research',
+    'Topic :: Scientific/Engineering :: Chemistry',
+    'Operating System :: OS Independent' ,
     'License :: OSI Approved :: MIT License',
     'Programming Language :: Python :: 3.10'
 ]
@@ -20,6 +21,9 @@ setup(
     license='MIT',
     classifiers=classifiers,
     keywords=['science', 'atom', 'atoms', 'scientific', 'thermomechanics', 'atomic', 'chemicals'],
-    packages=find_packages(),
+    packages=find_packages(where='src'),
     requires=['decimal', 'numpy', 'scipy']# اكتب كل المكاتب الي استخدمتها في مكتبتك
 )
+
+if __name__ == '__main__':
+    setup()

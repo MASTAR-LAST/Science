@@ -8,10 +8,12 @@ These are some well-known constants
 -----------------------------------
 
 """
+
+
 from __future__ import annotations
 
 import math as _math
-from typing import TYPE_CHECKING, Any
+from typing import overload
 
 import numpy as _np
 import scipy as sc
@@ -31,7 +33,6 @@ __all__ = [
     'FEIGENBAUM_CONSTANT', 'SIERPIŃSKIS_CONSTANT', 'KHINCHINS_CONSTANT',
     'FRANSÉN_ROBINSON_CONSTANT', 'LÉVYS_CONSTANT', 'RECIPROCAL_FIBONACCI_CONSTANT',
     'FEIGENBAUM_CONSTANT'
-
 ]
 
 
@@ -79,31 +80,6 @@ FRANSÉN_ROBINSON_CONSTANT: float = 2.80777024202851936522150118655777293
 LÉVYS_CONSTANT: float = 3.27582291872181115978768188245384386
 RECIPROCAL_FIBONACCI_CONSTANT: float = 3.35988566624317755317201130291892717
 FEIGENBAUM_CONSTANT: float = 4.66920160910299067185320382046620161
-
-"""
-Collection of physical constants and conversion factors.
-
-Most constants are in SI units, so you can do
-print '10 mile per minute is', 10*mile/minute, 'm/s or', 10*mile/(minute*knot), 'knots'
-
-The list is not meant to be comprehensive, but just convenient for everyday use.
-"""
-
-
-
-# if TYPE_CHECKING:
-#     import numpy.typing as npt
-
-"""
-BasSw 2006
-physical constants: imported from CODATA
-unit conversion: see e.g., NIST special publication 811
-Use at own risk: double-check values before calculating your Mars orbit-insertion burn.
-Some constants exist in a few variants, which are marked with suffixes.
-The ones without any suffix should be the most common ones.
-"""
-
-
 
 
 # mathematical constants

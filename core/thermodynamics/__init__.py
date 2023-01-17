@@ -1,6 +1,6 @@
 
-try:
-    from .temperature import Temperature
+if __name__ == '__main__':
+    from temperature import Temperature
 
-except ImportError:
-    pass
+else:
+    from .temperature import Temperature

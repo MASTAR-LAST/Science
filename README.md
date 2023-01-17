@@ -74,7 +74,7 @@ Please make sure to update tests as appropriate.
 # Usage
 
 ## Simpel usage
-## Convert between temperature scales
+Convert between temperature scales
 ```python 
     #                            From Celsius to Kelvin
     # Importing the module as sc

@@ -1,12 +1,12 @@
 
 try:
    from .abc23 import Atom
-   from .atomic_error import _AtomicError
+   from .errors.ECUam import _AtomicError
    from sys import *
    from types import *
 except ImportError:
    from abc23 import Atom
-   from atomic_error import _AtomicError
+   from errors.ECUam import _AtomicError
    from sys import *
    from types import *
    

@@ -1,14 +1,14 @@
 #                                                                               Made by TWISTER_FROSTE
 #   Date: 24/9/2022
 try:
-    from .atoms_base import AtomBase, Atoms_info
-    from .atomic_error import _AtomicError, _UndefinedSymbolError
+    from .atomBase.atoms_base import AtomBase, Atoms_info
+    from .errors.ECUam import _AtomicError, _UndefinedSymbolError
     from typing import Union
     import time
     import sys
 except ImportError:
-    from atoms_base import AtomBase, Atoms_info
-    from atomic_error import _AtomicError, _UndefinedSymbolError
+    from atomBase.atoms_base import AtomBase, Atoms_info
+    from errors.ECUam import _AtomicError, _UndefinedSymbolError
     from typing import Union
     import time
     import sys

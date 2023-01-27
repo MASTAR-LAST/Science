@@ -1,9 +1,7 @@
-#                                                                               Made by TWISTER_FROSTE
+#                                                                        Made by TWISTER_FROSTE (AKA Muhammed alkohawaldeh)
 #   Date: 24/9/2022
 from abc import ABCMeta, abstractmethod
 from typing import Union
-import time
-import sys
 
 """
     TODO: Make your own error with 'Exception' like a class 

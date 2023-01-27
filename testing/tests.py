@@ -1,9 +1,11 @@
 
 try:
-    from typing import Union, Optional
+    from typing import Union, Optional, List
+    from types import NoneType
     from decimal import Decimal
 except ImportError:
     from typing import Union
+    from types import NoneType
     from decimal import Decimal
 
 
@@ -31,34 +33,35 @@ def fahrenMethod(target, status: Union[str, None]) -> Decimal:
 
 class Temperature:
         
-    def Rankin(_Temperature: super_listup, *, Key: key_list ='celsius') -> float:
+    def Kelvin(_Temperature: super_listup, *, Key: key_list ='celsius') -> Union[float, list[float]]:
         """
-            This function converts the entered temperature into Rankin
+            This function converts the entered temperature `into Kelvin`.
         
         """
-        if type(Key) == None:
+        if isinstance(Key, NoneType):
             Key = 'celsius'
-            Temperature.Fahrenheit(_Temperature, Key)
+            Temperature.Kelvin(_Temperature, Key = Key)
 
-        if type(Key) == list and type(_Temperature) == list:
+        if isinstance(Key, list) and isinstance(_Temperature, list):
 
             if type(_Temperature[0]) not in [int, float] and type(Key[0]) != str:
 
                 _Temperature = list(map(int, _Temperature))
                 Key = list(map(str, Key))
-                Temperature.Fahrenheit(_Temperature, Key)
+                Temperature.Kelvin(_Temperature, Key = Key)
 
-            if type(_Temperature[0]) not in [int, float]:
+            if isinstance(_Temperature[0], not int or float):#type(_Temperature[0]) not in [int, float]
                     _Temperature = list(map(int, _Temperature))
-                    Temperature.Fahrenheit(_Temperature, Key)
-                    
-            if type(Key[0]) != str:
+                    Temperature.Kelvin(_Temperature, Key = Key)
+
+            if isinstance(Key[0], not str):
                 Key = list(map(str, Key))
-                Temperature.Fahrenheit(_Temperature, Key)
+                Temperature.Kelvin(_Temperature, Key = Key)
 
             else:
+
                     if len(_Temperature) != len(Key):
-                        raise TypeError(len(_Temperature), len(Key))# _InstabilityError
+                        raise TypeError(len(_Temperature), len(Key))#    _InstabilityError
 
                     result: list[int] = []
                     dummy_tm: list[int] = _Temperature
@@ -70,83 +73,90 @@ class Temperature:
                         _Temperature = Decimal(f'{_Temperature}')
 
                         if Key.lower() in ['k', 'kelvin']:
-                            _Temperature *= rankinDivConstant
-                            result.append(float(_Temperature))
+                            ex = float(_Temperature)
+                            result.append(ex)
                             _Temperature = int(_Temperature)
                         elif Key.lower() in ['c', 'celsius']:
                             _Temperature += kelvinConstant
-                            _Temperature *= rankinDivConstant
                             result.append(float(_Temperature))
                             _Temperature = int(_Temperature)
                         elif Key.lower() in ['f', 'fahrenheit']:
                             _Temperature = fahrenMethod(target = _Temperature, status = 'to kelvin&celsius')
-                            _Temperature *= rankinDivConstant
+                            _Temperature += kelvinConstant
                             result.append(float(_Temperature))
                             _Temperature = int(_Temperature)
                         elif Key.lower() in ['r', 'rankin']:
+                            _Temperature -= rankinStatConstant
+                            _Temperature *= rankinRedivConstant
                             result.append(float(_Temperature))
                             _Temperature = int(_Temperature)
                         else:
                             result.append('KNE') # KNE: Key Not Exist
                     return result
 
-        elif type(Key) == str and type(_Temperature) in [int, float]:  
+        elif isinstance(Key, str) and isinstance(_Temperature, int or float):  
 
             _Temperature = float(_Temperature)
             _Temperature = Decimal(f'{_Temperature}')
 
             if Key.lower() in ['k', 'kelvin']:
-                _Temperature *= rankinDivConstant
                 return float(_Temperature)
 
             elif Key.lower() in ['c', 'celsius']:
-                _Temperature += kelvinConstant
-                _Temperature *= rankinDivConstant
-                return float(_Temperature)
+                return float(_Temperature + kelvinConstant)
 
             elif Key.lower() in ['f', 'fahrenheit']:
                 _Temperature = fahrenMethod(target = _Temperature, status = 'to kelvin&celsius')
-                _Temperature *= rankinDivConstant
+                _Temperature += kelvinConstant 
                 return float(_Temperature)
             
             elif Key.lower() in ['r', 'rankin']:
+                _Temperature -= rankinStatConstant
+                _Temperature *= rankinRedivConstant
+                _Temperature += kelvinConstant
                 return float(_Temperature)
         
-            raise TypeError(Key)# _TemperatureError
+            raise TypeError(Key)#   _TemperatureError
 
-        elif type(Key) == str and type(_Temperature) == list:
+        elif isinstance(Key, str) and isinstance(_Temperature, list):
 
-                    result: list[int] = []
-                    dummy_tm: list[int] = _Temperature
-                    dummy_key: str = Key
-                    for i in range(len(dummy_tm)):
-                        _Temperature = dummy_tm[i]
-                        Key = dummy_key
-                        _Temperature = float(_Temperature)
-                        _Temperature: Decimal = Decimal(f'{_Temperature}')
+                if type(_Temperature[0]) not in [int, float]:
+                    _Temperature = list(map(int, _Temperature))
+                    Temperature.Kelvin(_Temperature, Key = Key)
 
-                        if Key.lower() in ['k', 'kelvin']:
-                            _Temperature *= rankinDivConstant
-                            result.append(float(_Temperature))
-                            _Temperature = int(_Temperature)
-                        elif Key.lower() in ['c', 'celsius']:
-                            _Temperature += kelvinConstant
-                            _Temperature *= rankinDivConstant
-                            result.append(float(_Temperature))
-                            _Temperature = int(_Temperature)
-                        elif Key.lower() in ['f', 'fahrenheit']:
-                            _Temperature = fahrenMethod(target = _Temperature, status = 'to kelvin&celsius')
-                            _Temperature *= rankinDivConstant
-                            result.append(float(_Temperature))
-                            _Temperature = int(_Temperature)
-                        elif Key.lower() in ['r', 'rankin']:
-                            result.append(float(_Temperature))
-                            _Temperature = int(_Temperature)
-                        else:
-                            result.append('KNE') # KNE: Key Not Exist
-                    return result
+                result: list[int] = []
+                dummy_tm: list[int] = _Temperature
+                dummy_key: str = Key
+                for i in range(len(dummy_tm)):
+                    _Temperature = dummy_tm[i]
+                    Key = dummy_key
+                    _Temperature = float(_Temperature)
+                    _Temperature = Decimal(f'{_Temperature}')
 
-        raise   TypeError(Key, _Temperature)# _KeyTypeError
+                    if Key.lower() in ['k', 'kelvin']:
+                        ex = float(_Temperature)
+                        result.append(ex)
+                        _Temperature = int(_Temperature)
+                    elif Key.lower() in ['c', 'celsius']:
+                        _Temperature += kelvinConstant
+                        result.append(float(_Temperature))
+                        _Temperature = int(_Temperature)
+                    elif Key.lower() in ['f', 'fahrenheit']:
+                        _Temperature = fahrenMethod(target = _Temperature, status = 'to kelvin&celsius')
+                        _Temperature += kelvinConstant
+                        result.append(float(_Temperature))
+                        _Temperature = int(_Temperature)
+                    elif Key.lower() in ['r', 'rankin']:
+                        _Temperature -= rankinStatConstant
+                        _Temperature *= rankinRedivConstant
+                        result.append(float(_Temperature))
+                        _Temperature = int(_Temperature)
+                    else:
+                        result.append('KNE') # KNE: Key Not Exist
+                return result
+
+        raise TypeError(Key, _Temperature) #    _KeyTypeError
 
 
-print(Temperature.Rankin([1,2,3], Key = 'c'))
+
+print(Temperature.Kelvin([785, '34'], Key='c'))

@@ -34,7 +34,7 @@
 
 Installation
 ============
-## Use the package manager pip to install foobar.
+### Use the package manager pip to install **Science** package.
 
 ```bash
   pip install science
@@ -52,8 +52,18 @@ related to conversion between temperatures or atomic activity
 in containing almost all the information of atoms,
 which makes it powerful and able to create simple simulations of atomic activities.
 
-> **NOTE:** this package is created by one persone, so don't be rude
+## package capabilities:
+---
+1. `convert between temperature scales`
 
+2. `Draw charts of the expected change in temperature of objects or areas under given weather conditions`
+
+3. `Contains thermomechanical equations`
+
+4. `Building chemical bonds between atoms`...etc.
+---
+> **NOTE:** This package is supposed to be able to turn fantasy into reality, but the only truth seems to be that this is almost impossible if you remain in this state of poor performance and desperate need for help.
+---
 ## Contributing
 
 **Pull requests are welcome**. For major changes, please open an *issue* first
@@ -64,7 +74,13 @@ Please make sure to update tests as appropriate.
 <h2> Sources </h2>
         <ul>
             <li>
-                <a href="https://github.com/MASTAR-LAST/Science/tree/master/Source"> Source Code </a>
+                <a href="https://github.com/MASTAR-LAST/Science/tree/master/core"> Source Code </a>
+                <li>
+                <a href="https://github.com/MASTAR-LAST/Science/tree/master/core/atom"> Atomic Stuff </a>
+                </li>
+                <li>
+                <a href="https://github.com/MASTAR-LAST/Science/tree/master/core/thermodynamics"> thermodynamics </a>
+                </li>
             </li>
             <li>
                 <a href="https://github.com/MASTAR-LAST/Science/tree/master/Source/Errors"> Errors </a>
@@ -76,16 +92,19 @@ Please make sure to update tests as appropriate.
 ## Simpel usage
 Convert between temperature scales
 ```python 
-    #                            From Celsius to Kelvin
+    #                       Convert from Celsius to Kelvin
     # Importing the module as sc
     import science as sc
 
-    # Call the Kelvin function from the Temperature class
-    temp = sc.Temperature.Kelvin(23, 'c')
+    # Convert the Temperature
+    result = sc.Temperature.Kelvin(23, Key = 'c')
 
     # Printing the result
-    print(temp)
-```
-## License
+    print(result)
+``` 
 
-[MIT](https://choosealicense.com/licenses/mit/)
+## For more details, please see the [documents]()
+
+# License
+
+* [MIT](https://choosealicense.com/licenses/mit/)

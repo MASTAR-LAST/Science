@@ -24,7 +24,7 @@ Code for converting a thermometer from Celsius to Kelvin:
     >>> result = sc.Temperature.Kelvin(13,'c')
     >>> print(result)
 
-For more details, please refer `https://github.com/MASTAR-LAST/Science` and see `README.md` file.
+For more details, please refer `<https://github.com/MASTAR-LAST/Science>` and see also `README.md` file.
 
 Atomic Classes
 ------------

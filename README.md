@@ -34,7 +34,7 @@
 
 Installation
 ============
-### Use the package manager pip to install **Science** package.
+### Use the package manager `pip` to install **Science** package.
 
 ```bash
   pip install science
@@ -52,15 +52,23 @@ related to conversion between temperatures or atomic activity
 in containing almost all the information of atoms,
 which makes it powerful and able to create simple simulations of atomic activities.
 
-## package capabilities:
+## Operating system compatibility
+-----
+system type | compatibility 
+------------ | ------------- 
+Linux | *Not Sure yet* :interrobang:
+Windows | *compatible* :heavy_check_mark:
+Mac OS | *compatible* :heavy_check_mark:
+
+## package capabilities
 ---
-1. `convert between temperature scales`
+1. *convert between temperature scales*
 
-2. `Draw charts of the expected change in temperature of objects or areas under given weather conditions`
+2. *Draw charts of the expected change in temperature of objects or areas under given weather conditions*
 
-3. `Contains thermomechanical equations`
+3. *Contains thermomechanical equations*
 
-4. `Building chemical bonds between atoms`...etc.
+4. *Building chemical bonds between atoms...etc.*
 ---
 > **NOTE:** This package is supposed to be able to turn fantasy into reality, but the only truth seems to be that this is almost impossible if you remain in this state of poor performance and desperate need for help.
 ---

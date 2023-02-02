@@ -78,7 +78,37 @@ class Temperature:
     def Kelvin(_Temperature: super_listup, *, Key: key_list ='celsius') -> Union[float, list[float]]:
         """
             This function converts the entered temperature `into Kelvin`.
-        
+
+            It's take two args:
+            -----------------
+                        Key: as `Key = 'any key'` | Temperature
+                        
+            Types of args:
+            -------------
+                        Key as `List[string]` or `string`.
+                        Temperature as `List[Integer]`, `Integer`, `string of integer`, `string of floats` or `floats`.
+
+            Examples:
+            ---------
+                >>> import scince as sc
+                >>> #  Correct 
+                >>> print(sc.Temperature.Kelvin(345, Key='f'))
+                >>> print(sc.Temperature.Kelvin([435, 343, 531], Key='f'))
+                >>> print(sc.Temperature.Kelvin([435, 343, 531], Key=['f', 'f', 'f']))
+                >>> print(sc.Temperature.Kelvin([435, 343, 531], Key=['f', 'k', 'c']))
+
+                >>> #  incorrect
+                >>> print(sc.Temperature.Kelvin(234, Key=['f', 'k', 'c']))
+                >>> print(sc.Temperature.Kelvin([234], Key=['f', 'k', 'c']))
+                >>> print(sc.Temperature.Kelvin(234, Key=['f']))
+                >>> print(sc.Temperature.Kelvin([435, 343, 531], Key=['f']))
+                >>> print(sc.Temperature.Kelvin([435, 343, 531], Key=['f']))
+
+            Notice:
+            ------
+                If the key is of the type of a list of texts, 
+                then the temperatures must be of the type of a list of numbers of the same length,
+                and vice versa is not true.
         """
         if type(Key) == NoneType:
             Key = 'celsius'
@@ -133,7 +163,7 @@ class Temperature:
                             result.append(float(_Temperature))
                             _Temperature = int(_Temperature)
                         else:
-                            result.append('KNE') # KNE: Key Not Exist
+                            result.append('Undefined') # KNE: Key Not Exist
                     return result
 
         elif type(Key) == str and type(_Temperature) in [int, float]:  
@@ -190,7 +220,7 @@ class Temperature:
                             result.append(float(_Temperature))
                             _Temperature = int(_Temperature)
                         else:
-                            result.append('KNE') # KNE: Key Not Exist
+                            result.append('Undefined') # KNE: Key Not Exist
                     return result
 
         raise _KeyTypeError(Key, _Temperature)
@@ -199,7 +229,37 @@ class Temperature:
     def Celsius(_Temperature: super_listup, *, Key: key_list ='celsius') -> float:
         """
             This function converts the entered temperature into Celsius
-        
+            
+            It's take two args:
+            -----------------
+                        Key: as `Key = 'any key'` | Temperature
+                        
+            Types of args:
+            -------------
+                        Key as `List[string]` or `string`.
+                        Temperature as `List[Integer]`, `Integer`, `string of integer`, `string of floats` or `floats`.
+
+            Examples:
+            ---------
+                >>> import scince as sc
+                >>> #  Correct 
+                >>> print(sc.Temperature.Celsius(345, Key='f'))
+                >>> print(sc.Temperature.Celsius([435, 343, 531], Key='f'))
+                >>> print(sc.Temperature.Celsius([435, 343, 531], Key=['f', 'f', 'f']))
+                >>> print(sc.Temperature.Celsius([435, 343, 531], Key=['f', 'k', 'c']))
+
+                >>> #  incorrect
+                >>> print(sc.Temperature.Celsius(234, Key=['f', 'k', 'c']))
+                >>> print(sc.Temperature.Celsius([234], Key=['f', 'k', 'c']))
+                >>> print(sc.Temperature.Celsius(234, Key=['f']))
+                >>> print(sc.Temperature.Celsius([435, 343, 531], Key=['f']))
+                >>> print(sc.Temperature.Celsius([435, 343, 531], Key=['f']))
+
+            Notice:
+            ------
+                If the key is of the type of a list of texts, 
+                then the temperatures must be of the type of a list of numbers of the same length,
+                and vice versa is not true.
         """
         if type(Key) == NoneType:
             Key = 'celsius'
@@ -253,7 +313,7 @@ class Temperature:
                             result.append(_Temperature)
                             _Temperature = int(_Temperature)
                         else:
-                            result.append('KNE') # KNE: Key Not Exist
+                            result.append('Undefined') # KNE: Key Not Exist
                     return result
 
         elif type(Key) == str and type(_Temperature) in [int, float]:  
@@ -311,7 +371,7 @@ class Temperature:
                     result.append(_Temperature)
                     _Temperature = int(_Temperature)
                 else:
-                    result.append('KNE') # KNE: Key Not Exist
+                    result.append('Undefined') # KNE: Key Not Exist
             return result
 
         raise _KeyTypeError(Key, _Temperature)
@@ -320,7 +380,37 @@ class Temperature:
     def Fahrenheit(_Temperature: super_listup, *, Key: key_list ='celsius') -> float:
         """
             This function converts the entered temperature into Fahrenheit
-        
+
+            It's take two args:
+            -----------------
+                        Key: as `Key = 'any key'` | Temperature
+                        
+            Types of args:
+            -------------
+                        Key as `List[string]` or `string`.
+                        Temperature as `List[Integer]`, `Integer`, `string of integer`, `string of floats` or `floats`.
+
+            Examples:
+            ---------
+                >>> import scince as sc
+                >>> #  Correct 
+                >>> print(sc.Temperature.Fahrenheit(345, Key='f'))
+                >>> print(sc.Temperature.Fahrenheit([435, 343, 531], Key='f'))
+                >>> print(sc.Temperature.Fahrenheit([435, 343, 531], Key=['f', 'f', 'f']))
+                >>> print(sc.Temperature.Fahrenheit([435, 343, 531], Key=['f', 'k', 'c']))
+
+                >>> #  incorrect
+                >>> print(sc.Temperature.Fahrenheit(234, Key=['f', 'k', 'c']))
+                >>> print(sc.Temperature.Fahrenheit([234], Key=['f', 'k', 'c']))
+                >>> print(sc.Temperature.Fahrenheit(234, Key=['f']))
+                >>> print(sc.Temperature.Fahrenheit([435, 343, 531], Key=['f']))
+                >>> print(sc.Temperature.Fahrenheit([435, 343, 531], Key=['f']))
+
+            Notice:
+            ------
+                If the key is of the type of a list of texts, 
+                then the temperatures must be of the type of a list of numbers of the same length,
+                and vice versa is not true.
         """
         if type(Key) == NoneType:
             Key = 'celsius'
@@ -375,7 +465,7 @@ class Temperature:
                             result.append(_Temperature)
                             _Temperature = int(_Temperature)
                         else:
-                            result.append('KNE') # KNE: Key Not Exist
+                            result.append('Undefined') # KNE: Key Not Exist
                     return result
 
         elif type(Key) == str and type(_Temperature) in [int, float]:  
@@ -438,7 +528,7 @@ class Temperature:
                     result.append(_Temperature)
                     _Temperature = int(_Temperature)
                 else:
-                    result.append('KNE') # KNE: Key Not Exist
+                    result.append('Undefined') # KNE: Key Not Exist
             return result
 
         raise _KeyTypeError(Key, _Temperature)
@@ -448,7 +538,37 @@ class Temperature:
     def Rankin(_Temperature: super_listup, *, Key: key_list ='celsius') -> float:
         """
             This function converts the entered temperature into Rankin
-        
+
+            It's take two args:
+            -----------------
+                        Key: as `Key = 'any key'` | Temperature
+                        
+            Types of args:
+            -------------
+                        Key as `List[string]` or `string`.
+                        Temperature as `List[Integer]`, `Integer`, `string of integer`, `string of floats` or `floats`.
+
+            Examples:
+            ---------
+                >>> import scince as sc
+                >>> #  Correct 
+                >>> print(sc.Temperature.Rankin(345, Key='f'))
+                >>> print(sc.Temperature.Rankin([435, 343, 531], Key='f'))
+                >>> print(sc.Temperature.Rankin([435, 343, 531], Key=['f', 'f', 'f']))
+                >>> print(sc.Temperature.Rankin([435, 343, 531], Key=['f', 'k', 'c']))
+
+                >>> #  incorrect
+                >>> print(sc.Temperature.Rankin(234, Key=['f', 'k', 'c']))
+                >>> print(sc.Temperature.Rankin([234], Key=['f', 'k', 'c']))
+                >>> print(sc.Temperature.Rankin(234, Key=['f']))
+                >>> print(sc.Temperature.Rankin([435, 343, 531], Key=['f']))
+                >>> print(sc.Temperature.Rankin([435, 343, 531], Key=['f']))
+
+            Notice:
+            ------
+                If the key is of the type of a list of texts, 
+                then the temperatures must be of the type of a list of numbers of the same length,
+                and vice versa is not true.
         """
         if type(Key) == NoneType:
             Key = 'celsius'
@@ -501,7 +621,7 @@ class Temperature:
                             result.append(float(_Temperature))
                             _Temperature = int(_Temperature)
                         else:
-                            result.append('KNE') # KNE: Key Not Exist
+                            result.append('Undefined') # KNE: Key Not Exist
                     return result
 
         elif type(Key) == str and type(_Temperature) in [int, float]:
@@ -561,7 +681,7 @@ class Temperature:
                     result.append(float(_Temperature))
                     _Temperature = int(_Temperature)
                 else:
-                    result.append('KNE') # KNE: Key Not Exist
+                    result.append('Undefined') # KNE: Key Not Exist
             return result
 
         raise   _KeyTypeError(Key, _Temperature)
@@ -570,3 +690,5 @@ class Temperature:
 # __all__ = ['Temperature', 'Kelvin', 'Celsius', 'Fahrenheit', 'Rankin']
 # for i in range(100000):
 #     f = i
+
+print(Temperature.Rankin([2, 34 ,345], Key = ['C']))

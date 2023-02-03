@@ -1,5 +1,40 @@
 """
-TODO: MAKE A DOC FOR THIS FILE
+ Temperature class
+        ==================
+            All functions take two arguments (`_Temperature`, `Key`)
+
+                Available FUNCTIONS:
+                --------------------
+                            `Func 1`:  Kelvin(here but the number of temperature, here but the scale key).
+                            `Func 2`:  Fahrenheit(here but the number of temperature, here but the scale key).
+                            `Func 3`:  Celsius(here but the number of temperature, here but the scale key).
+
+                Available CASES:
+                ----------------
+                            `Case 1`:  Use the scale key `'Kelvin or k'` if the temperature number from `Kelvin`. 
+                            `Case 2`:  Use the scale key `'Fahrenheit or f'` if the temperature number from `Fahrenheit`.
+                            `Case 3`:  Use the scale key `'Celsius or c'` if the temperature number from `Celsius`.
+
+         USES:
+         -----
+            If you want to switch between temperature gauges,
+            Use the name of the scale you want to convert to,
+            then put the temperature and the symbol of the scale from which this temperature came.
+
+        
+        CREATED BY: `Muhammed Alkohawaldeh`
+        ----------------------------------
+        CLASS VERSION: `0.1.0-pre-Alpha`
+        --------------------------------
+
+        Copyright 2023 Muhammed Alkohawaldeh
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 """
 
 try:
@@ -86,7 +121,7 @@ class Temperature:
             Types of args:
             -------------
                         Key as `List[string]` or `string`.
-                        Temperature as `List[Integer]`, `Integer`, `string of integer`, `string of floats` or `floats`.
+                        Temperature as `List[Integer]`, `Integer`, `List[Float]`, `string of integer`, `string of floats` or `floats`.
 
             Examples:
             ---------
@@ -237,7 +272,7 @@ class Temperature:
             Types of args:
             -------------
                         Key as `List[string]` or `string`.
-                        Temperature as `List[Integer]`, `Integer`, `string of integer`, `string of floats` or `floats`.
+                        Temperature as `List[Integer]`, `Integer`, `List[Float]`, `string of integer`, `string of floats` or `floats`.
 
             Examples:
             ---------
@@ -388,7 +423,7 @@ class Temperature:
             Types of args:
             -------------
                         Key as `List[string]` or `string`.
-                        Temperature as `List[Integer]`, `Integer`, `string of integer`, `string of floats` or `floats`.
+                        Temperature as `List[Integer]`, `Integer`, `List[Float]`, `string of integer`, `string of floats` or `floats`.
 
             Examples:
             ---------
@@ -546,7 +581,7 @@ class Temperature:
             Types of args:
             -------------
                         Key as `List[string]` or `string`.
-                        Temperature as `List[Integer]`, `Integer`, `string of integer`, `string of floats` or `floats`.
+                        Temperature as `List[Integer]`, `Integer`, `List[Float]`, `string of integer`, `string of floats` or `floats`.
 
             Examples:
             ---------
@@ -691,4 +726,4 @@ class Temperature:
 # for i in range(100000):
 #     f = i
 
-print(Temperature.Rankin([2, 34 ,345], Key = ['C']))
+# print(Temperature.Kelvin(1234.324234325, Key = "kelvin"))

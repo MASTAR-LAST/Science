@@ -1,8 +1,0 @@
-Change Log 
-===========
-
-VERSION: 0.1.0(beta)[24/9/2022]
-----------------------------------
-- First Release
-
-Remember to change this date later :)

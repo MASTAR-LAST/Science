@@ -75,7 +75,7 @@ class TranMetal(Atom):
 #    print(TranMetal.getAtoms())
 
 # print(next(TranMetal.getAtoms()))
-print(TranMetal.get_atoms.__doc__)
+# print(TranMetal.get_atoms.__doc__)
 # print(next(TranMetal.getAtoms()))
 # for i in TranMetal.getAtoms():
 

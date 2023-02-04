@@ -1,6 +1,6 @@
 """
  Temperature class
-        ==================
+==================
             All functions take two arguments (`_Temperature`, `Key`)
 
                 Available FUNCTIONS:

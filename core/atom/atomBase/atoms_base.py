@@ -66,6 +66,27 @@ AtomsAlkaliMetal: list[str] = ["Hydrogen(H)", "Lithium(Li)", "Sodium(Na)", "Pota
 
 AtomsAlkalineEarthMetal: list[str] = ['Beryllium(Be)', 'Magnesium(Mg)', 'Calcium(Ca)', 'Strontium(Sr)', 'Barium(Ba)', 'Radium(Ra)']
 
+AtomsActinide: list[str] = ['Actinium(Ac)', 'Thorium(Th)', 'Protactinium(Pa)', 'Uranium(U)', 'Neptunium(Np)', 'Plutonium(Pu)',
+                             'Americium(Am)', 'Curium(Cm)', 'Berkelium(Bk)', 'Californium(Cf)', 'Einsteinium(Es)', 'Fermium(Fm)',
+                               'Mendelevium(Md)', 'Nobelium(No)', 'Lawrencium(Lr)']
+
+AtomsPostTransitionMetal: list[str] = ['Aluminium(Al)', 'Gallium(Ga)', 'Zinc(Zn)', 'Cadmium(Cd)', 'Indium(In)', 'Tin(Sn)',
+                                        'Mercury(Hg)', 'Thallium(Tl)', 'Lead(Pb)', 'Bismuth(Bi)', 'Polonium(Po)', 'Astatine(At)']
+
+AtomsMetalloid: list[str] = ['Boron(B)', 'Silicon(Si)', 'Germanium(Ge)', 'Arsenic(As)', 'Antimony(Sb)', 'Tellurium(Te)']
+
+AtomsReactiveNonmetal: list[str] = ['Carbon(C)', 'Nitrogen(N)', 'Oxygen(O)', 'Fluorine(F)', 'Phosphorus(P)',
+                                     'Sulfur(S)', 'Chlorine(Cl)', 'Selenium(Se)', 'Bromine(Br)', 'Iodine(I)']
+
+AtomsNobleGas: list[str] = ['Helium(He)', 'Neon(Ne)', 'Argon(Ar)', 'Krypton(Kr)', 'Xenon(Xe)', 'Radon(Rn)']
+
+AtomsLanthanide: list[str] = ['Lanthanum(La)', 'Cerium(Ce)', 'Praseodymium(Pr)', 'Neodymium(Nd)', 'Promethium(Pm)',
+                            'Samarium(Sm)', 'Europium(Eu)', 'Gadolinium(Gd)', 'Terbium(Tb)', 'Dysprosium(Dy)', 'Holmium(Ho)',
+                            'Erbium(Er)', 'Thulium(Tm)', 'Ytterbium(Yb)', 'Lutetium(Lu)']
+
+AtomsUnknownChemProp: list[str] = ['Meitnerium(Mt)', 'Darmstadtium(Ds)', 'Roentgenium(Rg)', 'Copernicium(Cn)', 'Nihonium(Nh)',
+                                    'Flerovium(Fl)', 'Moscovium(Mc)', 'Livermorium(Lv)', 'Tennessine(Ts)', 'Oganesson(Og)']
+
 ########################################################################
 
 

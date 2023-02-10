@@ -1,15 +1,16 @@
 try:
    from .abc23 import Atom
+   from .atomBase.atoms_base import AtomsAlkaliMetal
    from .errors.ECUam import _AtomicError
    from sys import *
    from types import *
 except ImportError:
    from abc23 import Atom
+   from atomBase.atoms_base import AtomsAlkaliMetal
    from errors.ECUam import _AtomicError
    from sys import *
    from types import *
 
-AtomsAlkaliMetal = ["Hydrogen(H)", "Lithium(Li)", "Sodium(Na)", "Potassium(K)", "Rubidium(Rb)", "Caesium(Cs)", "Francium(Fr)"]
 
 class AlkaliMetal(Atom):
 
@@ -27,7 +28,7 @@ class AlkaliMetal(Atom):
      electronConfiguration, electronsPerShell, phaseAtSTP, meltingPoint, boilingPoint, isotopes)
 
     @classmethod
-    def getAtoms(cls):
+    def getAtoms(cls) -> list[str]:
         """
         THE FUNCTION:
 

@@ -1,10 +1,12 @@
 try:
    from .abc23 import Atom
+   from .atomBase.atoms_base import AtomsLanthanide
    from .errors.ECUam import _AtomicError
    from sys import *
    from types import *
 except ImportError:
    from abc23 import Atom
+   from atomBase.atoms_base import AtomsLanthanide
    from errors.ECUam import _AtomicError
    from sys import *
    from types import *
@@ -19,5 +21,15 @@ class Lanthanide(Atom):
         super().__init__(name, symbol, protons, neutrons, electrons, atomicMass, atomicNumber, group,
      electronConfiguration, electronsPerShell, phaseAtSTP, meltingPoint, boilingPoint, isotopes)
 
+     @classmethod
+     def getAtoms(cls) -> list[str]:
+        """
+        THE FUNCTION:
+
+                This function is giving you a describe the atoms contained in this group
+
+        """
+        return AtomsLanthanide
+     
 fg = Lanthanide(name=None, symbol= None,group= None, atomicMass= None,atomicNumber= None, electronConfiguration=None, electrons=None, electronsPerShell=None, boilingPoint=None, neutrons=None, phaseAtSTP=None, protons=None, meltingPoint=None, isotopes=None)
 

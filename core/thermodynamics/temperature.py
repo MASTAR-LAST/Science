@@ -39,13 +39,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 try:
     from typing import Union, Optional
-    from types import NoneType
+    # from types import NoneType
     from decimal import Decimal
     from .tester import speedTest
     from .errors.ECUtm import _InstabilityError, _UndefinedStateError, _KeyTypeError, _TemperatureError
 except ImportError:
     from typing import Union
-    from types import NoneType
+    # from types import NoneType
     from decimal import Decimal 
     from errors.ECUtm import _InstabilityError, _UndefinedStateError, _KeyTypeError, _TemperatureError
     from tester import speedTest
@@ -56,6 +56,7 @@ rankinStatConstant: Decimal = Decimal('491.67')
 rankinRedivConstant: Decimal = Decimal('0.55555555555')
 rankinDivConstant: Decimal = Decimal('1.8')
 
+NoneType = type(None)
 listup = list[Union[int, float]]
 super_listup = Union[int, float, listup]
 key_list = Optional[Union[str, list[str]]]

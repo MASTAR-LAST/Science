@@ -1,9 +1,16 @@
-from .abc23 import Atom
-from .atomic_error import _AtomicError
-from sys import *
-from types import *
+try:
+   from .abc23 import Atom
+   from .atomBase.atoms_base import AtomsAlkaliMetal
+   from .errors.ECUam import _AtomicError
+   from sys import *
+   from types import *
+except ImportError:
+   from abc23 import Atom
+   from atomBase.atoms_base import AtomsAlkaliMetal
+   from errors.ECUam import _AtomicError
+   from sys import *
+   from types import *
 
-AtomsAlkaliMetal = ["Hydrogen(H)", "Lithium(Li)", "Sodium(Na)", "Potassium(K)", "Rubidium(Rb)", "Caesium(Cs)", "Francium(Fr)"]
 
 class AlkaliMetal(Atom):
 
@@ -13,7 +20,6 @@ class AlkaliMetal(Atom):
     """
 
      # TODO:     Make Functions&Methods for this class, make sure it has a get atoms method.
-     # TODO:     Don't forget to make a list that have all atoms that in this class. 
     def __init__(self, name, symbol, protons, neutrons, electrons, atomicMass, atomicNumber, group,
      electronConfiguration, electronsPerShell, phaseAtSTP, meltingPoint, boilingPoint, isotopes):
 
@@ -21,7 +27,7 @@ class AlkaliMetal(Atom):
      electronConfiguration, electronsPerShell, phaseAtSTP, meltingPoint, boilingPoint, isotopes)
 
     @classmethod
-    def getAtoms(cls):
+    def getAtoms(cls) -> list[str]:
         """
         THE FUNCTION:
 

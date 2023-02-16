@@ -24,7 +24,7 @@ Code for converting a thermometer from Celsius to Kelvin:
     >>> result = sc.Temperature.Kelvin(13,'c')
     >>> print(result)
 
-For more details, please refer `https://github.com/MASTAR-LAST/Science` and see `README.md` file.
+For more details, please refer `<https://github.com/MASTAR-LAST/Science>` and see also `README.md` file.
 
 Atomic Classes
 ------------
@@ -77,11 +77,11 @@ Thermodynamic Classes
 """
 
 try:
-    from .core.atom import *
-    from .core.thermodynamics import *
-    from .version import __version__
+    from .core import Hydrogen, H, Actinium, Selenium, Se, Sulfur, S, Carbon, C, Chlorine, Cl, Fluorine, F, Bromine, Br, Nitrogen, N, Iodine, I, Oxygen, O, Phosphorus, P
+    from .core import *
+    from .version import __version__, __full_version__
 
 except ImportError:
-    from core.atom import *
-    from core.thermodynamics import *
-    from version import __version__
+    from core import Hydrogen, H, Actinium, Selenium, Se, Sulfur, S, Carbon, C, Chlorine, Cl, Fluorine, F, Bromine, Br, Nitrogen, N, Iodine, I, Oxygen, O, Phosphorus, P
+    from core import *
+    from version import __version__, __full_version__

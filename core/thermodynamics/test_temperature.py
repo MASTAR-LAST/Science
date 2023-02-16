@@ -45,7 +45,7 @@ class TestCelsius(unittest.TestCase):
       self.assertRaises(_KeyTypeError, tm.Celsius, 23, Key=[3])    
       self.assertRaises(_KeyTypeError, tm.Celsius, 23, Key={23})
       self.assertRaises(_KeyTypeError, tm.Celsius, 23, Key=(98,23)) 
-      self.assertRaises(_KeyTypeError, tm.Celsius, 23, Key=set([98]))
+      self.assertRaises(_KeyTypeError, tm.Celsius, 23, Key={98})
 
    def test_Celsius_Type_error_raise(self):
     #Test Celsius input/output Temperature that must raise _KeyTypeError
@@ -55,7 +55,7 @@ class TestCelsius(unittest.TestCase):
       self.assertRaises(_KeyTypeError, tm.Celsius, None, Key='C')    
       self.assertRaises(_KeyTypeError, tm.Celsius, {23}, Key='K')
       self.assertRaises(_KeyTypeError, tm.Celsius, (98,23), Key='F') 
-      self.assertRaises(_KeyTypeError, tm.Celsius, set([98]), Key='C')
+      self.assertRaises(_KeyTypeError, tm.Celsius, {98}, Key='C')
 
 ###########################################################################################
 
@@ -97,7 +97,7 @@ class TestFahrenheit(unittest.TestCase):
       self.assertRaises(_KeyTypeError, tm.Fahrenheit, 23, Key=[3])    
       self.assertRaises(_KeyTypeError, tm.Fahrenheit, 23, Key={23})
       self.assertRaises(_KeyTypeError, tm.Fahrenheit, 23, Key=(98,23)) 
-      self.assertRaises(_KeyTypeError, tm.Fahrenheit, 23, Key=set([98]))
+      self.assertRaises(_KeyTypeError, tm.Fahrenheit, 23, Key={98})
 
    def test_Fahrenheit_Type_error_raise(self):
     #Test Fahrenheit input/output Temperature that must raise _KeyTypeError
@@ -107,7 +107,7 @@ class TestFahrenheit(unittest.TestCase):
       self.assertRaises(_KeyTypeError, tm.Fahrenheit, None, Key='C')    
       self.assertRaises(_KeyTypeError, tm.Fahrenheit, {23}, Key='K')
       self.assertRaises(_KeyTypeError, tm.Fahrenheit, (98,23), Key='F') 
-      self.assertRaises(_KeyTypeError, tm.Fahrenheit, set([98]), Key='C')    
+      self.assertRaises(_KeyTypeError, tm.Fahrenheit, {98}, Key='C')    
 
 #####################################################################################
 
@@ -149,7 +149,7 @@ class TestKelvin(unittest.TestCase):
       self.assertRaises(_KeyTypeError, tm.Kelvin, 23, Key=[3])    
       self.assertRaises(_KeyTypeError, tm.Kelvin, 23, Key={23})
       self.assertRaises(_KeyTypeError, tm.Kelvin, 23, Key=(98,23)) 
-      self.assertRaises(_KeyTypeError, tm.Kelvin, 23, Key=set([98]))
+      self.assertRaises(_KeyTypeError, tm.Kelvin, 23, Key={98})
 
    def test_Kelvin_Type_error_raise(self):
     #Test Kelvin input/output Temperature that must raise _KeyTypeError
@@ -159,7 +159,7 @@ class TestKelvin(unittest.TestCase):
       self.assertRaises(_KeyTypeError, tm.Kelvin, None, Key='C')    
       self.assertRaises(_KeyTypeError, tm.Kelvin, {23}, Key='K')
       self.assertRaises(_KeyTypeError, tm.Kelvin, (98,23), Key='F') 
-      self.assertRaises(_KeyTypeError, tm.Kelvin, set([98]), Key='C') 
+      self.assertRaises(_KeyTypeError, tm.Kelvin, {98}, Key='C') 
 
 ###########################################################################
 
@@ -214,7 +214,7 @@ class TestRankin(unittest.TestCase):
       self.assertRaises(_KeyTypeError, tm.Rankin, 23, Key=[3])    
       self.assertRaises(_KeyTypeError, tm.Rankin, 23, Key={23})
       self.assertRaises(_KeyTypeError, tm.Rankin, 23, Key=(98,23)) 
-      self.assertRaises(_KeyTypeError, tm.Rankin, 23, Key=set([98]))
+      self.assertRaises(_KeyTypeError, tm.Rankin, 23, Key={98})
 
    def test_Rankin_KeyType_error_raise_temp(self):
     #Test Rankin input/output Temperature that must raise _KeyTypeError
@@ -224,7 +224,7 @@ class TestRankin(unittest.TestCase):
       self.assertRaises(_KeyTypeError, tm.Rankin, None, Key='C')    
       self.assertRaises(_KeyTypeError, tm.Rankin, {23}, Key='K')
       self.assertRaises(_KeyTypeError, tm.Rankin, (98,23), Key='F') 
-      self.assertRaises(_KeyTypeError, tm.Rankin, set([98]), Key='C') 
+      self.assertRaises(_KeyTypeError, tm.Rankin, {98}, Key='C') 
 
 
 if __name__ == '__main__':

@@ -1,7 +1,7 @@
 #                                                                        Made by TWISTER_FROSTE (AKA Muhammed alkohawaldeh)
 #   Date: 24/9/2022
 from abc import ABCMeta, abstractmethod
-from typing import Union
+from typing import Dict, List
 
 """
     TODO: Make your own error with 'Exception' like a class 
@@ -10,7 +10,7 @@ from typing import Union
 """
 
 #                   General Atomic lists 
-Atoms_info: dict[str, tuple] = {"H": ("Hydrogen", "Atomic Number : 1"), "He": ("Helium", "Atomic Number : 2"), "Li": ("Lithium", "Atomic Number : 3"),"Be": ("Beryllium", "Atomic Number : 4"),
+Atoms_info: Dict[str, tuple(str)] = {"H": ("Hydrogen", "Atomic Number : 1"), "He": ("Helium", "Atomic Number : 2"), "Li": ("Lithium", "Atomic Number : 3"),"Be": ("Beryllium", "Atomic Number : 4"),
         "B": ("Boron", "Atomic Number : 5"),"C": ("Carbon", "Atomic Number : 6"), "N": ("Nitrogen", "Atomic Number : 7"),"O": ("Oxygen", "Atomic Number : 8"),
         "F": ("Fluorine", "Atomic Number : 9"), "Ne": ("Neon", "Atomic Number : 10"), "Na": ("Sodium", "Atomic Number : 11"), "Mg": ("Magnesium", "Atomic Number : 12"),
         "Al": ("Aluminium", "Atomic Number : 13"), "Si": ("Silicon", "Atomic Number : 14"), "P": ("Phosphorus", "Atomic Number : 15"), "S": ("Sulfur", "Atomic Number : 16"),
@@ -41,7 +41,7 @@ Atoms_info: dict[str, tuple] = {"H": ("Hydrogen", "Atomic Number : 1"), "He": ("
         "Nh": ("Nihonium", "Atomic Number : 113"), "Fl": ("Flerovium", "Atomic Number : 114"), "Mc": ("Moscovium", "Atomic Number : 115"), "Lv": ("Livermorium", "Atomic Number : 116"),
         "Ts": ("Tennessine", "Atomic Number : 117"), "Og": ("Oganesson", "Atomic Number : 118")}
 
-Atomic_Number: dict[str, int] = {"H": 1, "He": 2, "Li": 3, "Be": 4, "B": 5, "C": 6, "N": 7, "O": 8, "F": 9, "Ne": 10,
+Atomic_Number: Dict[str, int] = {"H": 1, "He": 2, "Li": 3, "Be": 4, "B": 5, "C": 6, "N": 7, "O": 8, "F": 9, "Ne": 10,
         "Na": 11, "Mg": 12, "Al": 13, "Si": 14, "P": 15, "S": 16, "Cl": 17, "Ar": 18, "K": 19, "Ca": 20,"Sc": 21, "Ti": 22,
         "V": 23, "Cr": 24, "Mn": 25, "Fe": 26, "Co": 27, "Ni": 28, "Cu": 29, "Zn": 30, "Ga": 31, "Ge": 32, "As": 33, "Se": 34,
         "Br": 35, "Kr": 36, "Rb": 37, "Sr": 38,"Y": 39, "Zr": 40, "Nb": 41, "Mo": 42, "Tc": 43, "Ru": 44, "Rh": 45, "Pd": 46,
@@ -55,36 +55,36 @@ Atomic_Number: dict[str, int] = {"H": 1, "He": 2, "Li": 3, "Be": 4, "B": 5, "C":
 
 #                   Groups for the Periodic Table
 
-AtomsTransMetal: list[str] = ["Scandium(Sc)", "Titanium(Ti)", "Vanadium(V)", "Chromium(Cr)", "Manganese(Mn)",
+AtomsTransMetal: List[str] = ["Scandium(Sc)", "Titanium(Ti)", "Vanadium(V)", "Chromium(Cr)", "Manganese(Mn)",
                    "Iron(Fe)", "Cobalt(Co)", "Nickel(Ni)", "Copper(Cu)", "Yttrium(Y)", "Zirconium(Zr)",
                    "Niobium(Nb)", "Molybdenum(Mo)", "Technetium(Tc)", "Ruthenium(Ru)", "Rhodium(Rh)",
                    "Palladium(Pd)", "Silver(Ag)", "Hafnium(Hf)", "Tantalum(Ta)", "Tungsten(W)", "Rhenium(Re)", 
                    "Osmium(Os)", "Iridium(Ir)", "Platinum(Pt)", "Gold(Au)", "Rutherfordium(Rf)", "Dubnium(Db)",
                    "Seaborgium(Sg)", "Bohrium(Bh)", "Hassium(Hs)"]
 
-AtomsAlkaliMetal: list[str] = ["Hydrogen(H)", "Lithium(Li)", "Sodium(Na)", "Potassium(K)", "Rubidium(Rb)", "Caesium(Cs)", "Francium(Fr)"]
+AtomsAlkaliMetal: List[str] = ["Hydrogen(H)", "Lithium(Li)", "Sodium(Na)", "Potassium(K)", "Rubidium(Rb)", "Caesium(Cs)", "Francium(Fr)"]
 
-AtomsAlkalineEarthMetal: list[str] = ['Beryllium(Be)', 'Magnesium(Mg)', 'Calcium(Ca)', 'Strontium(Sr)', 'Barium(Ba)', 'Radium(Ra)']
+AtomsAlkalineEarthMetal: List[str] = ['Beryllium(Be)', 'Magnesium(Mg)', 'Calcium(Ca)', 'Strontium(Sr)', 'Barium(Ba)', 'Radium(Ra)']
 
-AtomsActinide: list[str] = ['Actinium(Ac)', 'Thorium(Th)', 'Protactinium(Pa)', 'Uranium(U)', 'Neptunium(Np)', 'Plutonium(Pu)',
+AtomsActinide: List[str] = ['Actinium(Ac)', 'Thorium(Th)', 'Protactinium(Pa)', 'Uranium(U)', 'Neptunium(Np)', 'Plutonium(Pu)',
                              'Americium(Am)', 'Curium(Cm)', 'Berkelium(Bk)', 'Californium(Cf)', 'Einsteinium(Es)', 'Fermium(Fm)',
                                'Mendelevium(Md)', 'Nobelium(No)', 'Lawrencium(Lr)']
 
-AtomsPostTransitionMetal: list[str] = ['Aluminium(Al)', 'Gallium(Ga)', 'Zinc(Zn)', 'Cadmium(Cd)', 'Indium(In)', 'Tin(Sn)',
+AtomsPostTransitionMetal: List[str] = ['Aluminium(Al)', 'Gallium(Ga)', 'Zinc(Zn)', 'Cadmium(Cd)', 'Indium(In)', 'Tin(Sn)',
                                         'Mercury(Hg)', 'Thallium(Tl)', 'Lead(Pb)', 'Bismuth(Bi)', 'Polonium(Po)', 'Astatine(At)']
 
-AtomsMetalloid: list[str] = ['Boron(B)', 'Silicon(Si)', 'Germanium(Ge)', 'Arsenic(As)', 'Antimony(Sb)', 'Tellurium(Te)']
+AtomsMetalloid: List[str] = ['Boron(B)', 'Silicon(Si)', 'Germanium(Ge)', 'Arsenic(As)', 'Antimony(Sb)', 'Tellurium(Te)']
 
-AtomsReactiveNonmetal: list[str] = ['Carbon(C)', 'Nitrogen(N)', 'Oxygen(O)', 'Fluorine(F)', 'Phosphorus(P)',
+AtomsReactiveNonmetal: List[str] = ['Carbon(C)', 'Nitrogen(N)', 'Oxygen(O)', 'Fluorine(F)', 'Phosphorus(P)',
                                      'Sulfur(S)', 'Chlorine(Cl)', 'Selenium(Se)', 'Bromine(Br)', 'Iodine(I)']
 
-AtomsNobleGas: list[str] = ['Helium(He)', 'Neon(Ne)', 'Argon(Ar)', 'Krypton(Kr)', 'Xenon(Xe)', 'Radon(Rn)']
+AtomsNobleGas: List[str] = ['Helium(He)', 'Neon(Ne)', 'Argon(Ar)', 'Krypton(Kr)', 'Xenon(Xe)', 'Radon(Rn)']
 
-AtomsLanthanide: list[str] = ['Lanthanum(La)', 'Cerium(Ce)', 'Praseodymium(Pr)', 'Neodymium(Nd)', 'Promethium(Pm)',
+AtomsLanthanide: List[str] = ['Lanthanum(La)', 'Cerium(Ce)', 'Praseodymium(Pr)', 'Neodymium(Nd)', 'Promethium(Pm)',
                             'Samarium(Sm)', 'Europium(Eu)', 'Gadolinium(Gd)', 'Terbium(Tb)', 'Dysprosium(Dy)', 'Holmium(Ho)',
                             'Erbium(Er)', 'Thulium(Tm)', 'Ytterbium(Yb)', 'Lutetium(Lu)']
 
-AtomsUnknownChemProp: list[str] = ['Meitnerium(Mt)', 'Darmstadtium(Ds)', 'Roentgenium(Rg)', 'Copernicium(Cn)', 'Nihonium(Nh)',
+AtomsUnknownChemProp: List[str] = ['Meitnerium(Mt)', 'Darmstadtium(Ds)', 'Roentgenium(Rg)', 'Copernicium(Cn)', 'Nihonium(Nh)',
                                     'Flerovium(Fl)', 'Moscovium(Mc)', 'Livermorium(Lv)', 'Tennessine(Ts)', 'Oganesson(Og)']
 
 ########################################################################

@@ -5,8 +5,8 @@ int main(void)
 {
 
     printf("hello world\n");
-    double fg = c_kilven(1234.324234325, "kelvin");
-    printf("%f", fg);
+    double result = c_kilven(1234.324234325, "kelvin");
+    printf("%f", result);
     return 1;
 
 }

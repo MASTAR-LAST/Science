@@ -14,7 +14,6 @@ except ImportError:
 class Lanthanide(Atom):
 
      # TODO:     Make Functions&Methods for this class, make sure it has a get atoms method.
-     # TODO:     Don't forget to make a list that have all atoms that in this class. 
      def __init__(self, name, symbol, protons, neutrons, electrons, atomicMass, atomicNumber, group,
      electronConfiguration, electronsPerShell, phaseAtSTP, meltingPoint, boilingPoint, isotopes):
 
@@ -30,6 +29,3 @@ class Lanthanide(Atom):
 
         """
         return AtomsLanthanide
-     
-fg = Lanthanide(name=None, symbol= None,group= None, atomicMass= None,atomicNumber= None, electronConfiguration=None, electrons=None, electronsPerShell=None, boilingPoint=None, neutrons=None, phaseAtSTP=None, protons=None, meltingPoint=None, isotopes=None)
-

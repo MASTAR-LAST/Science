@@ -201,24 +201,6 @@ class Atom(AtomBase):
 
 ###################################################################################################################################################
 
-Hydrogen = Atom("Hydrogen", "H", 1, 0, 1, '1.00784u', 1, 'Group 1 (alkali metals)', '1S^1', [1], 'Gas', '13.99 K (-259.16 C, -434.49 F)', '(H2) 20.271 K (-252.879 C, -423.182 F)', ['1H', '2H', '3H'])
-Helium = Atom("Helium", "He", 2, 2, 2, "4.002602 u", 2, 'Group 18 (noble gases)', "1s^2", [2], 'Gas', "0.95 K (-272.20 °C, -457.96 °F) (at 2.5 MPa)", '	4.222 K (-268.928 °C, -452.070 °F)', ['2He', '3He', '4He'])
-# Lithium = Atom()
-# Beryllium = Atom()
-# Boron = Atom()
-# Carbon = Atom()
-# Nitrogen = Atom()
-# Oxygen = Atom()
-# Fluorine = Atom()
-# Neon = Atom()
-# Sodium = Atom()
-# Magnesium = Atom()
-# Aluminium = Atom()
-# Silicon = Atom()
-# Phosphorus = Atom()
-# Sulfur = Atom()
-# Chlorine = Atom()
-# Argon = Atom()
            #                                   أجعل لكل نوع من العناصل فئة خاصة مثلاً فئة الغازات النبيلة
 # print(Hydrogen.getMeltingPoint())
 

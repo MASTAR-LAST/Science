@@ -14,7 +14,6 @@ except ImportError:
 class Actinide(Atom):
 
      # TODO:     Make Functions&Methods for this class, make sure it has a get atoms method.
-     # TODO:     Don't forget to make a list that have all atoms that in this class. 
      def __init__(self, name, symbol, protons, neutrons, electrons, atomicMass, atomicNumber, group,
      electronConfiguration, electronsPerShell, phaseAtSTP, meltingPoint, boilingPoint, isotopes):
 

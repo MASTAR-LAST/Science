@@ -146,3 +146,16 @@ VERSION: Under development [3/2/2023]
 -----------------------------------------------------------------
 
 - $origination$ `Unknown Chemical Properties` class
+
+VERSION: Under development [17/2/2023]
+=====================================
+
+- Created a `requirements.txt` File
+
+- Created an `__init__.py` File
+
+- Created a `catoms.c` File
+
+- Created a `catoms.exe` File
+
+- Adding all `Reactive Nonmetal` Atoms to **storecore** File

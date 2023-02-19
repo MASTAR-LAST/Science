@@ -192,6 +192,8 @@ class Atom(AtomBase):
     def getFullName(self) -> Union[str, None]:
         return self.__name
 
+
+
 ########################################################################################################################################
 
 
@@ -199,22 +201,4 @@ class Atom(AtomBase):
 # print(f"The atoms number is {Atom.atomsNumber} out of 118")
 
 
-###################################################################################################################################################
-
-           #                                   أجعل لكل نوع من العناصل فئة خاصة مثلاً فئة الغازات النبيلة
-# print(Hydrogen.getMeltingPoint())
-
-
-#TranMetale = Transition Metal
-
-# print(Temperature.Celsius(3,'r'))
-
-
-# print(Temperature.Fahrenheit(23,'k'))
-# print(Temperature.Kelvin(0,'F'))
-
-# print(Atom.atoms_info('all_info'))
-# print(Atom.atoms_info(56))
-# print(Atom.atoms_info('symbol'))
-
-# print(Atom.atoms_info("all_info"))
+########################################################################################################################################

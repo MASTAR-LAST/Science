@@ -366,11 +366,89 @@ Einsteinium: Actinide = Actinide(name = "Einsteinium",
                             atomicMass ='252u',
                             atomicNumber = 99, 
                             group = 'f-block groups (no number)', 
-                            electronConfiguration = ' 5f^11 7s^2',
+                            electronConfiguration = '5f^11 7s^2',
                             electronsPerShell = [2, 8, 18, 32, 29, 8, 2], 
                             phaseAtSTP = 'Solid', 
                             meltingPoint = '1133 K (860 °C, 1580 °F)', 
                             boilingPoint = '1269 K (996 °C, 1825 °F) (estimated)', 
                             isotopes = ['{240}Es', '{241}Es', '{242}Es', '{243}Es', '{244}Es', '{245}Es', '{246}Es', '{247}Es', '{248}Es', '{249}Es', '{250}Es', '{251}Es', '{252}Es', '{253}Es', '{254}Es', '{255}Es', '{256}Es', '{257}Es'])
 
+Fermium: Actinide = Actinide(name = "Fermium", 
+                            symbol = "Fm", 
+                            protons = 100,
+                            neutrons = 100,
+                            electrons = 100, 
+                            atomicMass ='257u',
+                            atomicNumber = 100, 
+                            group = 'f-block groups (no number)', 
+                            electronConfiguration = '5f^12 7s^2',
+                            electronsPerShell = [2, 8, 18, 32, 30, 8, 2], 
+                            phaseAtSTP = 'Solid (predicted)', 
+                            meltingPoint = '1800 K (1527 °C, 2781 °F) (predicted)', 
+                            boilingPoint = 'Unknown', 
+                            isotopes = ['{241}Fm', '{242}Fm', '{243}Fm', '{244}Fm', '{245}Fm', '{246}Fm', '{247}Fm', '{248}Fm', '{249}Fm', '{250}Fm', '{251}Fm', '{252}Fm', '{253}Fm', '{254}Fm', '{255}Fm', '{256}Fm', '{257}Fm', '{258}Fm', '{259}Fm', '{260}Fm'])
 
+Mendelevium: Actinide = Actinide(name = "Mendelevium", 
+                            symbol = "Md", 
+                            protons = 101,
+                            neutrons = 101,
+                            electrons = 101, 
+                            atomicMass ='258u',
+                            atomicNumber = 101, 
+                            group = 'f-block groups (no number)', 
+                            electronConfiguration = '5f^13 7s^2',
+                            electronsPerShell = [2, 8, 18, 32, 31, 8, 2], 
+                            phaseAtSTP = 'Solid (predicted)', 
+                            meltingPoint = '1100 K (827 °C, 1521 °F) (predicted)', 
+                            boilingPoint = 'Unknown', 
+                            isotopes = ['{244}Md', '{245}Md', '{246}Md', '{247}Md', '{248}Md', '{249}Md', '{250}Md', '{251}Md', '{252}Md', '{253}Md', '{254}Md', '{255}Md', '{256}Md', '{257}Md', '{258}Md', '{259}Md', '{260}Md'])
+
+Nobelium: Actinide = Actinide(name = "Nobelium", 
+                            symbol = "No", 
+                            protons = 102,
+                            neutrons = 102,
+                            electrons = 102, 
+                            atomicMass ='259u',
+                            atomicNumber = 102, 
+                            group = 'f-block groups (no number)', 
+                            electronConfiguration = '5f^14 7s^2',
+                            electronsPerShell = [2, 8, 18, 32, 32, 8, 2], 
+                            phaseAtSTP = 'Solid (predicted)', 
+                            meltingPoint = '1100 K (827 °C, 1521 °F) (predicted)', 
+                            boilingPoint = 'Unknown', 
+                            isotopes = ['{249}No', '{250}No', '{251}No', '{252}No', '{253}No', '{254}No', '{255}No', '{256}No', '{257}No', '{258}No', '{259}No', '{260}No', '{262}No'])
+
+Lawrencium: Actinide = Actinide(name = "Lawrencium", 
+                            symbol = "Lr", 
+                            protons = 103,
+                            neutrons = 103,
+                            electrons = 103, 
+                            atomicMass ='262 u',
+                            atomicNumber = 103, 
+                            group = 'f-block groups (no number)', 
+                            electronConfiguration = '5f^14 7s^2 7p^1',
+                            electronsPerShell = [2, 8, 18, 32, 32, 8, 3], 
+                            phaseAtSTP = 'Solid (predicted)', 
+                            meltingPoint = '1900 K (1627 °C, 2961 °F) (predicted)', 
+                            boilingPoint = 'Unknown', 
+                            isotopes = ['{251}Lr', '{252}Lr', '{253}Lr', '{254}Lr', '{255}Lr', '{256}Lr', '{257}Lr', '{258}Lr', '{259}Lr', '{260}Lr', '{261}Lr', '{262}Lr', '{264}Lr', '{266}Lr'])
+
+Ac:Actinide = Actinium
+Th:Actinide = Thorium
+Pa:Actinide = Protactinium
+U:Actinide = Uranium
+Np:Actinide = Neptunium
+Pu:Actinide = Plutonium
+Am:Actinide = Americium
+Cm:Actinide = Curium
+Bk:Actinide = Berkelium
+Cf:Actinide = Californium
+Es:Actinide = Einsteinium
+Fm:Actinide = Fermium
+Md:Actinide = Mendelevium
+No:Actinide = Nobelium
+Lr:Actinide = Lawrencium
+
+###################################################################################################################################################
+#                                                               AlkaliMetal Atoms                                                                 #
+###################################################################################################################################################

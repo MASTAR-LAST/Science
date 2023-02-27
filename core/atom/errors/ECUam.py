@@ -1,3 +1,19 @@
+"""
+ECUtm: Error Catch Unit (Atomic)
+====================================
+
+Errors:
+------
+    `_AtomicError` : ...
+
+    `_UndefinedSymbolError` : ...
+
+    `_FinalOrbitError` : ...
+
+    `_UnequalShipmentError` : ...
+
+"""
+
 class _AtomicError(Exception):
     """
     Exception raised for errors in the input salary.
@@ -23,29 +39,31 @@ class _UndefinedSymbolError(Exception):
         self.symbol = symbol
         super().__init__(self.message + str(self.symbol))
 
+class _FinalOrbitError(Exception):
+    """
+    Exception raised for errors in the input salary.
 
-# import openai
+    Attributes:
+        message -- explanation of the error
+    """
 
-# # استيراد مكتبة OpenAI
+    def __init__(self, symbol_1, symbol_2, message="These elements cannot form bonds because one or both of them have filled the last orbital -> "):
+        self.message = message
+        self.symbol_1 = symbol_1
+        self.symbol_2 = symbol_2
+        super().__init__(self.message + str(self.symbol_1) + " " + str(self.symbol_2))
 
-# # تعيين مفتاح API
-# openai.api_key = "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"
+class _UnequalShipmentError(Exception):
+    """
+    Exception raised for errors in the input salary.
 
-# # العثور على نموذج لغة معين
-# model_engine = "text-davinci-002"
+    Attributes:
+        message -- explanation of the error
+    """
 
-# # التعريف على الإدخال والإخراج المطلوبين
-# prompt = "What can you do?"
+    def __init__(self, symbol_1, symbol_2, message="These elements cannot form bonds because they both need or throw away the same electrons -> "):
+        self.message = message
+        self.symbol_1 = symbol_1
+        self.symbol_2 = symbol_2
+        super().__init__(self.message + str(self.symbol_1) + " " + str(self.symbol_2))
 
-# # استدعاء API والحصول على الإجابة
-# completion = openai.Completion.create(
-#     engine=model_engine,
-#     prompt=prompt,
-#     max_tokens=1024,
-#     n=1,
-#     stop=None,
-#     temperature=0.5,
-# )
-
-# # عرض الإجابة
-# print(completion.choices[0].text)

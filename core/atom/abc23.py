@@ -13,11 +13,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #   Date: 24/9/2022
 try:
     from .atomBase.atoms_base import AtomBase, Atoms_info
-    from .errors.ECUam import _AtomicError, _UndefinedSymbolError
+    from .errors.ECUam import _FinalOrbitError, _UnequalShipmentError
     from typing import Union
 except ImportError:
     from atomBase.atoms_base import AtomBase, Atoms_info
-    from errors.ECUam import _AtomicError, _UndefinedSymbolError
+    from errors.ECUam import _FinalOrbitError, _UnequalShipmentError
     from typing import Union
 """
     TODO: Make your own error with 'Exception' like a class 
@@ -104,107 +104,139 @@ class Atom(AtomBase):
         self.__electronConfiguration = electronConfiguration
         Atom.atomsNumber += 1
 
-
-    @classmethod
-    def atoms_info(cls, the_atom_name: str) -> Union[str, None]:
-        """
-            This function is give you a whole info that you want
-            about any atom just write the name or write `all_info`
-            to get the all info about the all atoms or `symbol`
-            to get just the symbol for whole atoms.
-
-        """
-        # FIXME: The all_info return none in the end
-        # FIXME: The symbol return none in the end
-        if the_atom_name == 'all_info':
-            for key, value in Atoms_info.items():
-                print(key, value)
-            
-            return ...
-
-        elif the_atom_name == 'symbol':
-                temp = 1
-                for key in Atoms_info:
-                    print(f'Atom_{temp} : {key}')
-                    temp += 1            
-
-        elif the_atom_name in Atoms_info:
-            return Atoms_info.get(the_atom_name)
-
-        else:
-            raise _UndefinedSymbolError(the_atom_name)
-
     def __str__(self):
         return f' Full Name: {self.__name},\n Symbol: {self.__symbol},\n Protons Number: {self.__protons},\n Neutrons Number: {self.__neutrons},\n Atomic Mass: {self.__atomicMass},\n Group: {self.__group},\n Electron Configuration: {self.__electronConfiguration},\n Electrons Per Shell: {self.__electronsPerShell},\n Phase at STP: {self.__phaseAtSTP},\n Melting Point: {self.__meltingPoint},\n Boiling Point: {self.__boilingPoint},\n Isotopes: {self.__isotopes}'
         
     @property
-    def getSymbol(self) -> Union[str, None]:
+    def symbol(self) -> Union[str, None]:
         return self.__symbol
 
     @property
-    def getProtons(self) -> Union[int, None]:
+    def protons(self) -> Union[int, None]:
         return self.__protons
 
     @property
-    def getNeutrons(self) -> Union[int, None]:
+    def neutrons(self) -> Union[int, None]:
         return self.__neutrons
 
     @property
-    def getElectrons(self) -> Union[int, None]:
+    def electrons(self) -> Union[int, None]:
         return self.__electrons
 
     @property
-    def getAtomicMass(self) -> Union[str, None]:
+    def atomic_mass(self) -> Union[str, None]:
         return self.__atomicMass
 
     @property
-    def getAtomicNumber(self) -> Union[int, None]:
+    def atomic_number(self) -> Union[int, None]:
         return self.__atomicNumber
 
     @property
-    def getGroup(self) -> Union[str, None]:
+    def group(self) -> Union[str, None]:
         return self.__group
 
     @property
-    def getElecConfig(self) -> Union[str, None]:
+    def electron_configuration(self) -> Union[str, None]:
         return self.__electronConfiguration
 
     @property
-    def getElecPerShell(self) -> Union[list, None]:
+    def electrons_per_shell(self) -> Union[list, None]:
         return self.__electronsPerShell
 
     @property
-    def getPhaseAtSTP(self) -> Union[str, None]:
+    def phase_at_STP(self) -> Union[str, None]:
         return self.__phaseAtSTP
 
     @property
-    def getMeltingPoint(self) -> Union[str, None]:
+    def melting_point(self) -> Union[str, None]:
         return self.__meltingPoint
 
     @property
-    def getBoilingPoint(self) -> Union[str, None]:
+    def boiling_point(self) -> Union[str, None]:
         return self.__boilingPoint
 
     @property
-    def getIsotopes(self) -> Union[list, None]:
+    def isotopes(self) -> Union[list, None]:
         return self.__isotopes
 
     @property
-    def getFullName(self) -> Union[str, None]:
+    def full_name(self) -> Union[str, None]:
         return self.__name
 
     def __add__(self, other):
         
         if self.__electronsPerShell[-1] < 4 and other.__electronsPerShell[-1] < 4:
-            return "These two atoms can not being connicting"
+
+            raise _UnequalShipmentError(f"{self.__name}({self.__symbol})", f"{other.__name}({other.__symbol})")
         
+        if self.__electronsPerShell[-1] > 4 and other.__electronsPerShell[-1] > 4:
+
+            raise _UnequalShipmentError(f"{self.__name}({self.__symbol})", f"{other.__name}({other.__symbol})")
+        
+        if self.__electronsPerShell[-1] == 8 or self.__symbol == 'He' or other.__electronsPerShell[-1] == 8 or other.__symbol == 'He':
+
+            raise _FinalOrbitError(f"{self.__name}({self.__symbol})", f"{other.__name}({other.__symbol})")
+        
+        number_of_atoms = 0
+        number_of_compounds = 0
+        
+        if self.__symbol in ['O', 'Cl'] or other.__symbol in ['O', 'Cl']:
+
+            number_of_atoms += 2
+        
+        if self.__electronsPerShell[-1] + number_of_atoms == 8 or other.__electronsPerShell[-1] + number_of_atoms == 8:
+            
+            if self.__electronsPerShell[-1] + number_of_atoms == 8:
+
+                if self.__phaseAtSTP == 'Gas' and other.__phaseAtSTP == 'Gas':
+
+                        if self.__electronsPerShell[-1] < other.__electronsPerShell[-1]:
+
+                            return f"{number_of_atoms}~{self.__symbol}(g) + {other.__symbol}(g) \u2192 {self.__symbol}{other.__symbol}"
+
+                        elif self.__electronsPerShell[-1] > other.__electronsPerShell[-1]:
+    
+                            return f"{number_of_atoms}~{self.__symbol}(g) + {other.__symbol}(g) \u2192 {other.__symbol}{self.__symbol}"
+
+            if other.__electronsPerShell[-1] + number_of_atoms == 8:
+
+                if self.__phaseAtSTP == 'Gas' and other.__phaseAtSTP == 'Gas':
+                        
+                        if self.__electronsPerShell[-1] < other.__electronsPerShell[-1]:
+
+                            return f"{self.__symbol}(g) + {number_of_atoms}~{other.__symbol}(g) \u2192 {self.__symbol}{other.__symbol}"
+
+                        elif self.__electronsPerShell[-1] > other.__electronsPerShell[-1]:
+    
+                            return f"{self.__symbol}(g) + {number_of_atoms}~{other.__symbol}(g) \u2192 {other.__symbol}{self.__symbol}"
 
 
-########################################################################################################################################
+    def show(self):
+        ...
+# def atoms_info(the_atom_name: str) -> Union[str, None]:
+#         """
+#             This function is give you a whole info that you want
+#             about any atom just write the name or write `all_info`
+#             to get the all info about the all atoms or `symbol`
+#             to get just the symbol for whole atoms.
 
+#         """
+#         # FIXME: The all_info return none in the end
+#         # FIXME: The symbol return none in the end
+#         if the_atom_name == 'all_info':
+#             for key, value in Atoms_info.items():
+#                 print(key, value)
+            
+#             return ...
 
-# عدد العناصر المعرف داخل المكتبة ككل 
-# print(f"The atoms number is {Atom.atomsNumber} out of 118")
+#         elif the_atom_name == 'symbol':
+#                 temp = 1
+#                 for key in Atoms_info:
+#                     print(f'Atom_{temp} : {key}')
+#                     temp += 1            
 
+#         elif the_atom_name in Atoms_info:
+#             return Atoms_info.get(the_atom_name)
 
-########################################################################################################################################
+#         else:
+#             raise _UndefinedSymbolError(the_atom_name)

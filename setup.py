@@ -21,7 +21,7 @@ setup(
     license='MIT',
     classifiers=classifiers,
     keywords=['science', 'atom', 'atoms', 'scientific', 'thermomechanics', 'atomic', 'chemicals'],
-    packages=find_packages(where='src'),
+    packages=find_packages(where='core'),
     requires=['decimal', 'numpy', 'scipy']# اكتب كل المكاتب الي استخدمتها في مكتبتك
 )
 

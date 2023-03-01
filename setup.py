@@ -15,7 +15,7 @@ setup(
     version=__version__,
     description='Use the properties of thermomechanics and set up simple chemical reactions',
     long_description=open('README.md').read(),# الملف المذكور لم ينتهي بعد ...
-    url='',
+    url='https://github.com/MASTAR-LAST/Science',
     author='Mohammed Al_kohawaldeh',
     author_email='belalalkohawaldeh@gmail.com',
     license='MIT',

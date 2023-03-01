@@ -188,6 +188,8 @@ class Atom(AtomBase):
             
             if self.__electronsPerShell[-1] + number_of_atoms == 8:
 
+                #NOTE: If the element state is Gas
+
                 if self.__phaseAtSTP == 'Gas' and other.__phaseAtSTP == 'Gas':
 
                         if self.__electronsPerShell[-1] < other.__electronsPerShell[-1]:
@@ -200,7 +202,7 @@ class Atom(AtomBase):
 
             if other.__electronsPerShell[-1] + number_of_atoms == 8:
 
-                if self.__phaseAtSTP == 'Gas' and other.__phaseAtSTP == 'Gas':
+                if self.__phaseAtSTP.lower() == 'gas' and other.__phaseAtSTP.lower() == 'gas':
                         
                         if self.__electronsPerShell[-1] < other.__electronsPerShell[-1]:
 
@@ -209,6 +211,30 @@ class Atom(AtomBase):
                         elif self.__electronsPerShell[-1] > other.__electronsPerShell[-1]:
     
                             return f"{self.__symbol}(g) + {number_of_atoms}~{other.__symbol}(g) \u2192 {other.__symbol}{self.__symbol}"
+                        
+                #NOTE: If the element state is Solid
+
+            if self.__phaseAtSTP.lower() == 'solid' and other.__phaseAtSTP.lower() == 'solid':
+
+                        if self.__electronsPerShell[-1] < other.__electronsPerShell[-1]:
+
+                            return f"{number_of_atoms}~{self.__symbol}(g) + {other.__symbol}(g) \u2192 {self.__symbol}{other.__symbol}"
+
+                        elif self.__electronsPerShell[-1] > other.__electronsPerShell[-1]:
+    
+                            return f"{number_of_atoms}~{self.__symbol}(g) + {other.__symbol}(g) \u2192 {other.__symbol}{self.__symbol}"
+
+            if other.__electronsPerShell[-1] + number_of_atoms == 8:
+
+                if self.__phaseAtSTP.lower() == 'solid' and other.__phaseAtSTP.lower() == 'solid':
+                        
+                        if self.__electronsPerShell[-1] < other.__electronsPerShell[-1]:
+
+                            return f"{self.__symbol}(s) + {number_of_atoms}~{other.__symbol}(s) \u2192 {self.__symbol}{other.__symbol}"
+
+                        elif self.__electronsPerShell[-1] > other.__electronsPerShell[-1]:
+    
+                            return f"{self.__symbol}(s) + {number_of_atoms}~{other.__symbol}(s) \u2192 {other.__symbol}{self.__symbol}"
 
 
     def show(self):

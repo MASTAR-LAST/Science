@@ -9,20 +9,20 @@ classifiers = [
     'Programming Language :: Python :: 3.10'
 ]
 
-exec(open('version.py').read())
+
 setup(
     name='science',
     version=__version__,
     description='Use the properties of thermomechanics and set up simple chemical reactions',
-    long_description=open('README.md').read(),# الملف المذكور لم ينتهي بعد ...
-    url='',
+    long_description=open('README.md').read(),
+    url='https://github.com/MASTAR-LAST/Science',
     author='Mohammed Al_kohawaldeh',
     author_email='belalalkohawaldeh@gmail.com',
     license='MIT',
     classifiers=classifiers,
     keywords=['science', 'atom', 'atoms', 'scientific', 'thermomechanics', 'atomic', 'chemicals'],
     packages=find_packages(where='src'),
-    requires=['decimal', 'numpy', 'scipy']# اكتب كل المكاتب الي استخدمتها في مكتبتك
+    requires=['decimal', 'numpy', 'scipy']
 )
 
 if __name__ == '__main__':

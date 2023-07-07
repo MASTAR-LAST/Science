@@ -82,12 +82,12 @@ Please make sure to update tests as appropriate.
 <h2> Sources </h2>
         <ul>
             <li>
-                <a href="https://github.com/MASTAR-LAST/Science/tree/master/core"> Source Code </a>
+                <a href="https://github.com/MASTAR-LAST/Science/tree/master/src/core"> Source Code </a>
                 <li>
-                <a href="https://github.com/MASTAR-LAST/Science/tree/master/core/atom"> Atomic Stuff </a>
+                <a href="https://github.com/MASTAR-LAST/Science/tree/master/src/core/atom"> Atomic Stuff </a>
                 </li>
                 <li>
-                <a href="https://github.com/MASTAR-LAST/Science/tree/master/core/thermodynamics"> thermodynamics </a>
+                <a href="https://github.com/MASTAR-LAST/Science/tree/master/src/core/thermodynamics"> thermodynamics </a>
                 </li>
             </li>
             <li>
